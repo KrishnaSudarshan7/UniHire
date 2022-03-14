@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -17,6 +18,7 @@ public class ForgotPassword extends AppCompatActivity {
     EditText email;
     Button resetPwBtn;
     FirebaseAuth fAuth;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +27,13 @@ public class ForgotPassword extends AppCompatActivity {
         email=findViewById(R.id.forgotPwEmail);
         resetPwBtn=findViewById(R.id.resetPwBtn);
         fAuth=FirebaseAuth.getInstance();
+        progressBar=findViewById(R.id.resetPwPB);
+        progressBar.setVisibility(View.INVISIBLE);
 
         resetPwBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 resetPassword();
             }
         });
@@ -40,9 +45,11 @@ public class ForgotPassword extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(ForgotPassword.this, "Check Email", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
                 else{
                     Toast.makeText(ForgotPassword.this, "Try Again", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
             }
         });
