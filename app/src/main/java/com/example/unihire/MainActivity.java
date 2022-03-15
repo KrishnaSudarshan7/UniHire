@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button goToLoginRec=findViewById(R.id.goToLoginRec);
-        Button goToLoginApp=findViewById(R.id.goToLoginRec);
+        Button goToLoginRec=findViewById(R.id.goToLoginBtnRec);
+        Button goToLoginApp=findViewById(R.id.goToLoginBtnApp);
         TextView goToRegApp=findViewById(R.id.goToRegApp);
         TextView goToRegRec=findViewById(R.id.goToRegRec);
         goToRegApp.setPaintFlags(goToRegApp.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
@@ -34,6 +34,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,RecruiterLogin.class);
+                startActivity(intent);
+            }
+        });
+
+        goToRegApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,ApplicantRegistration.class);
+                startActivity(intent);
+            }
+        });
+        goToLoginApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,ApplicantLogin.class);
                 startActivity(intent);
             }
         });

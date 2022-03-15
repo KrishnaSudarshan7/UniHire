@@ -18,8 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class RecruiterLogin extends AppCompatActivity {
-
+public class ApplicantLogin extends AppCompatActivity {
     EditText email,pw;
     Button loginBtn;
     FirebaseAuth fAuth;
@@ -28,20 +27,20 @@ public class RecruiterLogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recruiter_login);
+        setContentView(R.layout.activity_applicant_login);
 
-        fAuth=FirebaseAuth.getInstance();
+        fAuth= FirebaseAuth.getInstance();
         email=findViewById(R.id.AppLoginEmail);
         pw=findViewById(R.id.AppLoginPw);
         loginBtn=findViewById(R.id.AppLoginBtn);
         progressBar=findViewById(R.id.AppLoginPB);
         progressBar.setVisibility(View.INVISIBLE);
-        forgotPw=findViewById(R.id.forgotPwLink);
+        forgotPw=findViewById(R.id.forgotPwLink2);
         forgotPw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(RecruiterLogin.this, ForgotPassword.class);
-                intent.putExtra("USER", "RECRUITER");
+                Intent intent=new Intent(ApplicantLogin.this, ForgotPassword.class);
+                intent.putExtra("USER", "APPLICANT");
                 startActivity(intent);
             }
         });
@@ -63,16 +62,17 @@ public class RecruiterLogin extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(RecruiterLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ApplicantLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                         else {
-                            Toast.makeText(RecruiterLogin.this, "Login Unsucessfull", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ApplicantLogin.this, "Login Unsucessfull", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
                 });
             }
         });
+
     }
 }
