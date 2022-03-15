@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToLoginRec"
+        app:layout_constraintTop_toBottomOf="@+id/goToLoginBtnRec"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/goToLoginRec"
+        android:id="@+id/goToLoginBtnRec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniHire">
         <activity
+            android:name=".ApplicantLogin"
+            android:exported="false" />
+        <activity
+            android:name=".ApplicantRegistration"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity

@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RecruiterRegistration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -26,12 +27,15 @@ public class RecruiterRegistration extends AppCompatActivity implements AdapterV
     String SelectedCountry,SelectedState;
     Button regBtn;
     ProgressBar progressbar;
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
+    DatabaseReference refUniv;
+    DatabaseReference refUnivAddress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recruiter_registration);
-
+        refUniv=FirebaseDatabase.getInstance().getReference("University");
+        refUnivAddress=FirebaseDatabase.getInstance().getReference("UniversityAddress");
         mAuth=FirebaseAuth.getInstance();
         Spinner CountryRecReg = findViewById(R.id.CountryRecReg);
         Spinner StateRecReg = findViewById(R.id.StateRecReg);
@@ -94,21 +98,34 @@ public class RecruiterRegistration extends AppCompatActivity implements AdapterV
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Recruiter recruiter=new Recruiter(
-                            univName.getText().toString(),univURL.getText().toString(),univAddressL1.getText().toString(),
-                            univAddressL2.getText().toString(),univCity.getText().toString(),univPincode.getText().toString()
-                            ,univUGCID.getText().toString(),univNum.getText().toString(),univEmail.getText().toString(),
-                            univPw.getText().toString(),univReEnterPw.getText().toString(),SelectedCountry,SelectedState
-
-                    );
-                    FirebaseDatabase.getInstance().getReference("University").child(FirebaseAuth.getInstance().getUid()).setValue(recruiter)
+                            univName.getText().toString(),univURL.getText().toString(),
+                            univUGCID.getText().toString(),univNum.getText().toString(),univEmail.getText().toString());
+                    AddressClass univAddress=new AddressClass(univAddressL1.getText().toString().trim(),
+                            univAddressL2.getText().toString().trim(), SelectedCountry, SelectedState,
+                            univCity.getText().toString().trim(),Integer.parseInt(univPincode.getText().toString().trim())
+                            );
+                    String uid=FirebaseAuth.getInstance().getUid();
+                    refUniv.child(uid).setValue(recruiter)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
                                         Toast.makeText(RecruiterRegistration.this,"Registration Successful", Toast.LENGTH_SHORT).show();
                                         progressbar.setVisibility(View.INVISIBLE);
-                                        Intent intent=new Intent(RecruiterRegistration.this,RecruiterLogin.class);
-                                        startActivity(intent);
+                                        refUnivAddress.child(uid).setValue(univAddress).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task1) {
+                                                if(task1.isSuccessful()){
+                                                    Intent intent=new Intent(RecruiterRegistration.this,RecruiterLogin.class);
+                                                    startActivity(intent);
+                                                }
+                                                else{
+                                                    Toast.makeText(RecruiterRegistration.this,"Registration UnSuccessful", Toast.LENGTH_SHORT).show();
+                                                    progressbar.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+                                        });
+
                                     }
                                     else{
                                         Toast.makeText(RecruiterRegistration.this,"Registration UnSuccessful", Toast.LENGTH_SHORT).show();
@@ -116,6 +133,7 @@ public class RecruiterRegistration extends AppCompatActivity implements AdapterV
                                     }
                                 }
                             });
+
                 }
                 else{
                     Toast.makeText(RecruiterRegistration.this,"LOL", Toast.LENGTH_SHORT).show();

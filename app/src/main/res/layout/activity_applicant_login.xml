@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecruiterLogin">
+    tools:context=".ApplicantLogin">
 
     <EditText
         android:id="@+id/AppLoginEmail"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
-        android:text="Recruiter Login"
+        android:text="Applicant Login"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,11 +62,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgotPwLink"
+        app:layout_constraintTop_toBottomOf="@+id/forgotPwLink2"
         app:layout_constraintVertical_bias="0.335" />
 
     <TextView
-        android:id="@+id/forgotPwLink"
+        android:id="@+id/forgotPwLink2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
