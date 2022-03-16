@@ -1,32 +1,27 @@
-package com.example.unihire.ui.home;
+package com.example.unihire.ui.Profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.unihire.R;
-import com.example.unihire.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
-
-    private FragmentHomeBinding binding;
-
-    Button postBtn;
+public class ProfileFragment extends Fragment {
 
 
+
+    TextView text;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = null;
-        view = inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        postBtn=(Button) view.findViewById(R.id.postJobBtn);
+        text=(TextView) view.findViewById(R.id.profileText); //This is how you from xml
 
         return view;
     }
