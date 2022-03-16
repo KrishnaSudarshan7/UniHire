@@ -10,28 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.unihire.R;
 import com.example.unihire.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
 
+    TextView text;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        View view = null;
+        view = inflater.inflate(R.layout.fragment_notifications, container, false);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        text=(TextView) view.findViewById(R.id.profileText); //This is how you from xml
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+
 }

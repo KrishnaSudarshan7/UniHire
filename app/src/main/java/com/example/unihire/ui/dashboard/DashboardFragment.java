@@ -10,28 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.unihire.R;
 import com.example.unihire.databinding.FragmentDashboardBinding;
 
 public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
-
+    TextView text;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        View view = null;
+        view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        text=(TextView) view.findViewById(R.id.dashBoardText); //This is how you from xml
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-        return root;
+        return view;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
+
 }
