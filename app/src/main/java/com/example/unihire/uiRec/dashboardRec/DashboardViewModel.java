@@ -1,4 +1,4 @@
-package com.example.unihire.ui.dashboard;
+package com.example.unihire.uiRec.dashboardRec;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

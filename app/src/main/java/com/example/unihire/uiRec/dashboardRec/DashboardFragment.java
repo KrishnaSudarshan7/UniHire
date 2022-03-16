@@ -1,4 +1,4 @@
-package com.example.unihire.ui.Profile;
+package com.example.unihire.uiRec.dashboardRec;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.unihire.R;
+import com.example.unihire.databinding.FragmentDashboardBinding;
 
-public class ProfileFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 
-
-
+    private FragmentDashboardBinding binding;
     TextView text;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = null;
-        view = inflater.inflate(R.layout.fragment_profile, container, false);
+        view = inflater.inflate(R.layout.fragment_dashboard_rec, container, false);
 
-        text=(TextView) view.findViewById(R.id.profileText); //This is how you from xml
+        text=(TextView) view.findViewById(R.id.dashBoardText); //This is how you from xml
 
         return view;
     }

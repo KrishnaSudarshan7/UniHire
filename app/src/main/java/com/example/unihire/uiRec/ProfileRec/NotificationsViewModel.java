@@ -1,4 +1,4 @@
-package com.example.unihire.ui.Profile;
+package com.example.unihire.uiRec.ProfileRec;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

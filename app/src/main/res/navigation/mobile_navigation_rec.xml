@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_postjob"
-        android:name="com.example.unihire.ui.PostAJob.PostAJobFragment"
+        android:name="com.example.unihire.uiRec.PostAJob.PostAJobFragment"
         android:label="@string/title_postjob"
         tools:layout="@layout/fragment_post_a_job" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.unihire.ui.dashboard.DashboardFragment"
+        android:name="com.example.unihire.uiRec.dashboardRec.DashboardFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard_rec" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.unihire.ui.Profile.ProfileFragment"
+        android:name="com.example.unihire.uiRec.ProfileRec.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile_rec" />
 </navigation>
