@@ -65,8 +65,10 @@ public class RecruiterLogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(RecruiterLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(RecruiterLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.INVISIBLE);
+                                    Intent intent=new Intent(RecruiterLogin.this,RecruiterHomePage.class);
+                                    startActivity(intent);
                                 }
                                 else {
                                     Toast.makeText(RecruiterLogin.this, "Login Unsucessfull", Toast.LENGTH_SHORT).show();

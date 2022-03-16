@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">UniHire</string>
+    <string name="title_activity_recruiter_home_page">RecruiterHomePage</string>
+    <string name="title_postjob">Post a Job</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
     <string-array name="state_array">
         <item>Select state</item>
         <item>Tamilnadu</item>
