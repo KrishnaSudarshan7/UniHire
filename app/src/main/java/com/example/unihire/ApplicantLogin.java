@@ -3,6 +3,7 @@ package com.example.unihire;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -64,8 +65,10 @@ public class ApplicantLogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
-                                    Toast.makeText(ApplicantLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(ApplicantLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.INVISIBLE);
+                                    Intent intent=new Intent(ApplicantLogin.this,ApplicantHomePage.class);
+                                    startActivity(intent);
                                 }
                                 else {
                                     Toast.makeText(ApplicantLogin.this, "Login Unsucessfull", Toast.LENGTH_SHORT).show();
