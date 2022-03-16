@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RecruiterRegistration extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -65,8 +68,43 @@ public class RecruiterRegistration extends AppCompatActivity implements AdapterV
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(
+                !univName.getText().toString().isEmpty() || !univURL.getText().toString().isEmpty() || !univAddressL1.getText().toString().isEmpty() ||
+                !univCity.getText().toString().isEmpty() || !univPincode.getText().toString().isEmpty() || !univUGCID.getText().toString().isEmpty() ||
+                !univNum.getText().toString().isEmpty() || !univEmail.getText().toString().isEmpty() || !univPw.getText().toString().isEmpty() ||
+                !univReEnterPw.getText().toString().isEmpty()
+                ){
+                    if(noNumber(univName.getText().toString())){
+                        if(noNumber(univCity.getText().toString())){
+                            if(isInteger(univPincode.getText().toString())){
+                                if(isInteger(univUGCID.getText().toString())){
+                                    if(isInteger(univNum.getText().toString())){
+                                        if(Patterns.EMAIL_ADDRESS.matcher(univEmail.getText().toString()).matches()){
+                                            if(isValidPassword(univPw.getText().toString())){
+                                                if(univReEnterPw.getText().toString().equals(univPw.getText().toString())){
+                                                    registerUniv();
+                                                }else
+                                                    Toast.makeText(RecruiterRegistration.this, "Confirm Password is not same", Toast.LENGTH_SHORT).show();
+                                            }else
+                                                Toast.makeText(RecruiterRegistration.this, "Password must contain 8 letters(One capital letter), a number and a special character", Toast.LENGTH_SHORT).show();
 
-                registerUniv();
+                                            }else
+                                                Toast.makeText(RecruiterRegistration.this, "Enter proper email", Toast.LENGTH_SHORT).show();
+                                    }else
+                                        Toast.makeText(RecruiterRegistration.this, "University number should not contain characters", Toast.LENGTH_SHORT).show();
+                                }else
+                                    Toast.makeText(RecruiterRegistration.this, "UGCID should not contain characters", Toast.LENGTH_SHORT).show();
+                            }else
+                                Toast.makeText(RecruiterRegistration.this, "Pincode should not contain characters", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(RecruiterRegistration.this, "City should not contain numbers", Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        Toast.makeText(RecruiterRegistration.this, "University name should not contain numbers", Toast.LENGTH_SHORT).show();
+                    }
+                }else
+                    Toast.makeText(RecruiterRegistration.this, "Fill empty fields", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -87,11 +125,41 @@ public class RecruiterRegistration extends AppCompatActivity implements AdapterV
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
+    public boolean noNumber(String s){
+        char[] chars = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(char c : chars){
+            if(Character.isDigit(c)){
+                return false;
+            }
+        }
+        return true;
+    }
+    public boolean isInteger(String s){
+        int flag=0;
+        char[] chars = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(char c : chars){
+            if(Character.isDigit(c)){
+                flag++;
+            }
+        }
+        if(flag==s.length())
+            return true;
+        else
+            return false;
+    }
+    public static boolean isValidPassword(String password)
+    {
+        String regex = "^(?=.*[0-9])"
+                + "(?=.*[a-z])(?=.*[A-Z])"
+                + "(?=.*[@#$%^&+=])"
+                + "(?=\\S+$).{8,20}$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(password);
+        return m.matches();
+    }
     public void registerUniv(){
-        //Validation
-        //then
-
         progressbar.setVisibility(View.VISIBLE);
         mAuth.createUserWithEmailAndPassword(univEmail.getText().toString(),univPw.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override

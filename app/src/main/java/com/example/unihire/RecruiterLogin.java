@@ -59,19 +59,27 @@ public class RecruiterLogin extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 String emailstr=email.getText().toString().trim();
                 String password=pw.getText().toString().trim();
-                fAuth.signInWithEmailAndPassword(emailstr,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(RecruiterLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.INVISIBLE);
-                        }
-                        else {
-                            Toast.makeText(RecruiterLogin.this, "Login Unsucessfull", Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.INVISIBLE);
-                        }
-                    }
-                });
+                if(!emailstr.isEmpty()){
+                    if(!password.isEmpty()){
+                        fAuth.signInWithEmailAndPassword(emailstr,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    //Toast.makeText(RecruiterLogin.this, "Login sucessful", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                    Intent intent=new Intent(RecruiterLogin.this,RecruiterHomePage.class);
+                                    startActivity(intent);
+                                }
+                                else {
+                                    Toast.makeText(RecruiterLogin.this, "Login Unsucessfull", Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                }
+                            }
+                        });
+                    }else
+                        Toast.makeText(RecruiterLogin.this, "Password is empty!Please enter password", Toast.LENGTH_SHORT).show();
+                }else
+                    Toast.makeText(RecruiterLogin.this, "Email is empty!Please enter Email", Toast.LENGTH_SHORT).show();
             }
         });
     }

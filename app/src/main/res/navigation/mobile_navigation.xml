@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_postjob">
+
+    <fragment
+        android:id="@+id/navigation_postjob"
+        android:name="com.example.unihire.ui.PostAJob.PostAJobFragment"
+        android:label="@string/title_postjob"
+        tools:layout="@layout/fragment_post_a_job" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.unihire.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.unihire.ui.Profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
