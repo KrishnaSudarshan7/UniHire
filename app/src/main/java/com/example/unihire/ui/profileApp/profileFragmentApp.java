@@ -20,7 +20,7 @@ public class profileFragmentApp extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = null;
-        view = inflater.inflate(R.layout.fragment_profile_rec, container, false);
+        view = inflater.inflate(R.layout.fragment_profile_app, container, false);
 
         text=(TextView) view.findViewById(R.id.ProfileAppText); //This is how you from xml
 
