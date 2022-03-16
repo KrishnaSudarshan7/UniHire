@@ -30,21 +30,21 @@ public class PostJobForm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_job_form);
         fAuth=FirebaseAuth.getInstance();
-        String uid=fAuth.getUid();
+
         jobTitle=findViewById(R.id.jobTitle);
-        String job_title=jobTitle.getText().toString();
+
         dept=findViewById(R.id.dept);
-        String department=dept.getText().toString();
+
         spec=findViewById(R.id.spec);
-        String specialization=spec.getText().toString();
+
         jobDesc=findViewById(R.id.jobDesc);
-        String jd=jobDesc.getText().toString();
+
         weightage1=findViewById(R.id.weightage1);
-        int w1=Integer.parseInt(weightage1.getText().toString());
+
         weightage2=findViewById(R.id.weightage2);
-        int w2=Integer.parseInt(weightage2.getText().toString());
+
         weightage3=findViewById(R.id.weightage3);
-        int w3=Integer.parseInt(weightage3.getText().toString());
+
         p1Spinner=findViewById(R.id.p1Spinner);
         @SuppressLint("ResourceType") ArrayAdapter adapter1=new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item,R.array.priority_array);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -61,37 +61,41 @@ public class PostJobForm extends AppCompatActivity {
         GenderInput=findViewById(R.id.GenderInput);
         PhoneInput=findViewById(R.id.PhoneInput);
         EmailInput=findViewById(R.id.EmailInput);
-        boolean emailInp=EmailInput.isChecked();
         AddressInput=findViewById(R.id.AddressInput);
-        boolean addressInp=AddressInput.isChecked();
         WorkExpInput=findViewById(R.id.WorkExpInput);
-        boolean workexpInp=WorkExpInput.isChecked();
         EducationInput=findViewById(R.id.EducationInput);
-        boolean educationInp=EducationInput.isChecked();
         PublicationInput=findViewById(R.id.PublicationInput);
-        boolean publicationInp=PublicationInput.isChecked();
         AwardInput=findViewById(R.id.AwardInput);
-        boolean awardInp=AwardInput.isChecked();
         ResearchInput=findViewById(R.id.ResearchInput);
-        boolean researchInp=ResearchInput.isChecked();
         ResumeInput=findViewById(R.id.ResumeInput);
-        boolean resumInp=ResearchInput.isChecked();
-
         SaveDraftBtn=findViewById(R.id.SaveDraftBtn);
         PostJobFinalBtn=findViewById(R.id.PostJobFinalBtn);
-
         PostJobFinalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String uid=fAuth.getUid();
+                String job_title=jobTitle.getText().toString();
+                String department=dept.getText().toString();
+                String specialization=spec.getText().toString();
+                String jd=jobDesc.getText().toString();
+                int w1=Integer.parseInt(weightage1.getText().toString());
+                int w2=Integer.parseInt(weightage2.getText().toString());
+                int w3=Integer.parseInt(weightage3.getText().toString());
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date();
                 String dateTime=formatter.format(date);
                 String p1=p1Spinner.getSelectedItem().toString();
                 String p2=p2Spinner.getSelectedItem().toString();
                 String p3=p3Spinner.getSelectedItem().toString();
+                boolean workexpInp=WorkExpInput.isChecked();
+                boolean educationInp=EducationInput.isChecked();
+                boolean publicationInp=PublicationInput.isChecked();
+                boolean awardInp=AwardInput.isChecked();
+                boolean researchInp=ResearchInput.isChecked();
+                boolean resumeInp=ResearchInput.isChecked();
                 Job job=new Job(
                         uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,w1,
-                        w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,researchInp
+                        w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
                         ,false
                 );
             }
