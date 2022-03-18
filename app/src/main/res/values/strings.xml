@@ -17,6 +17,17 @@
         <item>Karnataka</item>
 
     </string-array>
+
+    <string-array name="priority_array">
+        <item>Education</item>
+        <item>Work Experience</item>
+        <item>Publication</item>
+        <item>Awards/Honors</item>
+        <item>Research Grants</item>
+
+    </string-array>
+
+
     <string-array name="countries_array">
         <item>Select Country</item>
         <item>Afghanistan</item>
