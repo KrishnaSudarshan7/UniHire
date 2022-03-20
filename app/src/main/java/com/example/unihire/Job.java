@@ -1,8 +1,36 @@
 package com.example.unihire;
 
 public class Job {
+
+    public Job() {
+        UnivId = " ";
+        JobTitle = " ";
+        Department = " ";
+        Specialization = " ";
+        JobDescription = " ";
+        Priority1 = " ";
+        Priority2 = " ";
+        Priority3 = " ";
+        PostedDateTime = " ";
+        Weightage1 = 0;
+        Weightage2 = 0;
+        Weightage3 = 0;
+        NameInput = true;
+        GenderInput = true;
+        PhoneInput = true;
+        EmailInput = true;
+        AddressInput = true;
+        WorkExpInput = false;
+        EducationInput = false;
+        PublicationInput = false;
+        AwardInput = false;
+        ResearchInput = false;
+        ResumeInput = false;
+        isDraft = true;
+    }
+
     public String UnivId,JobTitle,Department,Specialization,JobDescription,Priority1,Priority2,Priority3;
-    public String PostedDateTime,ClosedDateTime;
+    public String PostedDateTime;
     public int Weightage1,Weightage2,Weightage3;
     public boolean NameInput,GenderInput,PhoneInput,EmailInput,AddressInput,WorkExpInput,EducationInput,PublicationInput,AwardInput,ResearchInput,ResumeInput;
     public boolean isDraft;
