@@ -14,7 +14,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.unihire.databinding.ActivityRecruiterHomePageBinding;
-
 public class RecruiterHomePage extends AppCompatActivity {
 
     private ActivityRecruiterHomePageBinding binding;
@@ -35,8 +34,6 @@ public class RecruiterHomePage extends AppCompatActivity {
         NavController navController =  Navigation.findNavController(this, R.id.nav_host_fragment_activity_recruiter_home_page);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
-
     }
 
 }
