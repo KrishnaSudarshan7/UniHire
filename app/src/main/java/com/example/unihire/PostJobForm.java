@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -98,23 +99,91 @@ public class PostJobForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String uid=fAuth.getUid();
-                String job_title=jobTitle.getText().toString();
-                String department=dept.getText().toString();
-                String specialization=spec.getText().toString();
-                String jd=jobDesc.getText().toString();
-                int w1,w2,w3;
-                if(weightage1.equals("")) w1=0;
-                if(weightage2.equals("")) w2=0;
-                if(weightage3.equals("")) w3=0;
-                w1=Integer.parseInt(weightage1.getText().toString());
-                w2=Integer.parseInt(weightage2.getText().toString());
-                w3=Integer.parseInt(weightage3.getText().toString());
+                String job_title=" ";
+                job_title=jobTitle.getText().toString();
+                String department=" ";
+                department=dept.getText().toString();
+                String specialization=" ";
+                specialization=spec.getText().toString();
+                String jd=" ";
+                jd=jobDesc.getText().toString();
+                int w1=0,w2=0,w3=0;
+                if(weightage1.length()==0) w1=-1;
+                if(weightage1.length()==0) w2=-1;
+                if(weightage1.length()==0) w3=-1;
+                if(w1==0) w1=Integer.parseInt(weightage1.getText().toString());
+                if(w2==0) w2=Integer.parseInt(weightage2.getText().toString());
+                if(w3==0) w3=Integer.parseInt(weightage3.getText().toString());
                 SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 Date date = new Date();
                 String dateTime=formatter.format(date);
-                String p1=p1Spinner.getSelectedItem().toString();
-                String p2=p2Spinner.getSelectedItem().toString();
-                String p3=p3Spinner.getSelectedItem().toString();
+                String p1=" ";
+                p1=p1Spinner.getSelectedItem().toString();
+                String p2=" ";
+                p2=p2Spinner.getSelectedItem().toString();
+                String p3=" ";
+                p3=p3Spinner.getSelectedItem().toString();
+                boolean workexpInp=WorkExpInput.isChecked();
+                boolean educationInp=EducationInput.isChecked();
+                boolean publicationInp=PublicationInput.isChecked();
+                boolean awardInp=AwardInput.isChecked();
+                boolean researchInp=ResearchInput.isChecked();
+                boolean resumeInp=ResearchInput.isChecked();
+                boolean canInsert= validateJobForm(job_title,department, specialization, jd, w1,w2,w3,p1,p2,p3,
+                workexpInp, educationInp, publicationInp, awardInp, researchInp);
+                if(canInsert){
+                    Job job=new Job(
+                            uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,w1,
+                            w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
+                            ,false
+                    );
+                    String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
+                    reffJob.child(jobId).setValue(job).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(PostJobForm.this, "Job posted Sucessfully", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(PostJobForm.this,RecruiterHomePage.class);
+                                startActivity(intent);
+                            }
+                            else{
+                                Toast.makeText(PostJobForm.this, "Something Wrong happened", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+
+            }
+        });
+
+        SaveDraftBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String uid=fAuth.getUid();
+                String job_title=" ";
+                job_title=jobTitle.getText().toString();
+                String department=" ";
+                department=dept.getText().toString();
+                String specialization=" ";
+                specialization=spec.getText().toString();
+                String jd=" ";
+                jd=jobDesc.getText().toString();
+                int w1=0,w2=0,w3=0;
+                if(weightage1.length()==0) w1=-1;
+                if(weightage1.length()==0) w2=-1;
+                if(weightage1.length()==0) w3=-1;
+                if(w1==0) w1=Integer.parseInt(weightage1.getText().toString());
+                if(w2==0) w2=Integer.parseInt(weightage2.getText().toString());
+                if(w3==0) w3=Integer.parseInt(weightage3.getText().toString());
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date date = new Date();
+                String dateTime=formatter.format(date);
+                String p1=" ";
+                p1=p1Spinner.getSelectedItem().toString();
+                String p2=" ";
+                p2=p2Spinner.getSelectedItem().toString();
+                String p3=" ";
+                p3=p3Spinner.getSelectedItem().toString();
                 boolean workexpInp=WorkExpInput.isChecked();
                 boolean educationInp=EducationInput.isChecked();
                 boolean publicationInp=PublicationInput.isChecked();
@@ -124,14 +193,14 @@ public class PostJobForm extends AppCompatActivity {
                 Job job=new Job(
                         uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,w1,
                         w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
-                        ,false
+                        ,true
                 );
                 String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
                 reffJob.child(jobId).setValue(job).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(PostJobForm.this, "Job posted Sucessfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PostJobForm.this, "Job Saved As Draft Successfuly Sucessfully", Toast.LENGTH_SHORT).show();
                             Intent intent=new Intent(PostJobForm.this,RecruiterHomePage.class);
                             startActivity(intent);
                         }
@@ -140,11 +209,77 @@ public class PostJobForm extends AppCompatActivity {
                         }
                     }
                 });
-
             }
         });
 
     }
+
+    // boolean canInsert= validateJobForm(job_title,department, specialization, jd, w1,w2,w3,p1,p2,p3);
+    //workexpInp, educationInp, publicationInp, awardInp, researchInp,resumeInp);
+    public boolean validateJobForm(String job_title,String department, String specialization, String jd, int w1, int w2,
+                                   int w3, String p1,String p2, String p3,boolean workexpInp,
+                                   boolean educationInp, boolean publicationInp, boolean awardInp, boolean researchInp)
+    {
+        if(job_title.equals("") || job_title.length()<=2){
+            Toast.makeText(this, "Job Title Not Long Enough", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(department.equals("")){
+            Toast.makeText(this,"Department Field cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(specialization.equals("")){
+            Toast.makeText(this,"Specialization Field cannot be empty", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(jd.length()<=30){
+            Toast.makeText(this,"Job Description needs atleast 30 words", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(w1==0 || w2==0 || w3==0){
+            Toast.makeText(this,"Weightage Percent cannot be zero", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if((w1+w2+w3) != 100){
+            Toast.makeText(this,"Weightage Percent Should sum up to 100", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(p1.equals(p2) || p2.equals(p3) || p3.equals(p1)){
+            Toast.makeText(this,"Cannot Select Same Fields in Priority", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        //workexpInp, educationInp, publicationInp, awardInp, researchInp,resumeInp);
+        ArrayList<String>notSelected=new ArrayList<String>();
+        if(!workexpInp) notSelected.add("Work Experience");
+        if(!educationInp) notSelected.add("Education");
+        if(!publicationInp) notSelected.add("Publication");
+        if(!awardInp) notSelected.add("Awards/Honors");
+        if(!researchInp) notSelected.add("Research Grants");
+
+        if(matchPriority(p1,notSelected)) {
+            Toast.makeText(this,p1+" not selected in checkbox", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(matchPriority(p2,notSelected)) {
+            Toast.makeText(this,p2+" not selected in checkbox", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(matchPriority(p3,notSelected)) {
+            Toast.makeText(this,p3+" not selected in checkbox", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+
+        return true;
+    }
+    public boolean matchPriority(String s, ArrayList<String> notSelected){
+        for(int i=0;i<notSelected.size();i++)
+            if(notSelected.get(i).equals(s))
+                return true;
+        return false;
+
+    }
+
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
