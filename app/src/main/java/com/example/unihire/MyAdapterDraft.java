@@ -1,21 +1,25 @@
 package com.example.unihire;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.net.ConnectException;
 import java.util.ArrayList;
 
 public class MyAdapterDraft extends RecyclerView.Adapter<MyAdapterDraft.MyViewHolder>{
 
     Context context;
-    ArrayList<Job> list;
+    static public ArrayList<Job> list;
+
 
     public MyAdapterDraft(Context context, ArrayList<Job> list) {
         this.context = context;
@@ -26,7 +30,7 @@ public class MyAdapterDraft extends RecyclerView.Adapter<MyAdapterDraft.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(context).inflate(R.layout.draft_item,parent,false);
-        return new MyViewHolder(v);
+        return new MyViewHolder(v,context);
     }
 
     @Override
@@ -46,13 +50,25 @@ public class MyAdapterDraft extends RecyclerView.Adapter<MyAdapterDraft.MyViewHo
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
+        Context context;
         TextView job_title,dept,spec,datetime;
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView,Context context) {
             super(itemView);
             job_title=itemView.findViewById(R.id.job_title_rv);
             dept=itemView.findViewById(R.id.dept_rv);
             spec=itemView.findViewById(R.id.spec_rv);
             datetime=itemView.findViewById(R.id.date_time_rv);
+            this.context=context;
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Log.d("RecyclerView", "onClick：" + getAdapterPosition());
+                    String jobID=list.get(getAdapterPosition()).jobID;
+                    Intent intent=new Intent(context, PostJobForm.class);
+                    intent.putExtra("JOBID", jobID);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

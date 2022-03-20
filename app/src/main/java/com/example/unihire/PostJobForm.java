@@ -17,8 +17,11 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -39,6 +42,8 @@ public class PostJobForm extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_job_form);
+        String JOBID = getIntent().getStringExtra("JOBID");
+
         fAuth=FirebaseAuth.getInstance();
         reffJob= FirebaseDatabase.getInstance().getReference("Job");
         jobTitle=findViewById(R.id.jobTitle);
@@ -95,6 +100,24 @@ public class PostJobForm extends AppCompatActivity {
         ResumeInput=findViewById(R.id.ResumeInput);
         SaveDraftBtn=findViewById(R.id.SaveDraftBtn);
         PostJobFinalBtn=findViewById(R.id.PostJobFinalBtn);
+        //Toast.makeText(this, JOBID, Toast.LENGTH_SHORT).show();
+        if(!JOBID.equals("")){
+            reffJob.child(JOBID).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Job thisJob=snapshot.getValue(Job.class);
+                    jobTitle.setText(thisJob.JobTitle);
+                    dept.setText(thisJob.Department);
+                    spec.setText(thisJob.Specialization);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+        }
         PostJobFinalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,13 +154,14 @@ public class PostJobForm extends AppCompatActivity {
                 boolean resumeInp=ResearchInput.isChecked();
                 boolean canInsert= validateJobForm(job_title,department, specialization, jd, w1,w2,w3,p1,p2,p3,
                 workexpInp, educationInp, publicationInp, awardInp, researchInp);
+                String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
                 if(canInsert){
                     Job job=new Job(
-                            uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,w1,
+                            uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
                             w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
                             ,false
                     );
-                    String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
+
                     reffJob.child(jobId).setValue(job).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -190,12 +214,13 @@ public class PostJobForm extends AppCompatActivity {
                 boolean awardInp=AwardInput.isChecked();
                 boolean researchInp=ResearchInput.isChecked();
                 boolean resumeInp=ResearchInput.isChecked();
+                String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
                 Job job=new Job(
-                        uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,w1,
+                        uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
                         w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
                         ,true
                 );
-                String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
+
                 reffJob.child(jobId).setValue(job).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
