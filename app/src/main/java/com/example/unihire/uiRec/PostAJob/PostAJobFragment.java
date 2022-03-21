@@ -47,6 +47,7 @@ public class PostAJobFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PostJobForm.class);
+                intent.putExtra("JOBID","NULL");
                 startActivity(intent);
             }
         });
@@ -54,6 +55,7 @@ public class PostAJobFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DraftJobsList.class);
+
                 startActivity(intent);
             }
         });

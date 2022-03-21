@@ -29,7 +29,7 @@ public class Job {
         isDraft = true;
     }
 
-    public String UnivId,JobTitle,Department,Specialization,JobDescription,Priority1,Priority2,Priority3;
+    public String UnivId,JobTitle,Department,Specialization,JobDescription,Priority1,Priority2,Priority3,jobID;
     public String PostedDateTime;
     public int Weightage1,Weightage2,Weightage3;
     public boolean NameInput,GenderInput,PhoneInput,EmailInput,AddressInput,WorkExpInput,EducationInput,PublicationInput,AwardInput,ResearchInput,ResumeInput;
@@ -37,7 +37,7 @@ public class Job {
     public Job(
             String UnivId,String PostedDateTime,
             String JobTitle, String Department, String Specialization, String JobDescription,
-            String Priority1,String Priority2, String Priority3,int Weightage1,int Weightage2,int Weightage3,
+            String Priority1,String Priority2, String Priority3,String jobID, int Weightage1,int Weightage2,int Weightage3,
             boolean WorkExpInput, boolean EducationInput, boolean PublicationInput,boolean AwardInput,
             boolean ResearchInput,boolean ResumeInput, boolean isDraft
 
@@ -66,5 +66,6 @@ public class Job {
         this.ResearchInput=ResearchInput;
         this.ResumeInput=ResumeInput;
         this.isDraft=isDraft;
+        this.jobID=jobID;
     }
 }
