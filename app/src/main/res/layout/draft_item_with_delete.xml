@@ -8,7 +8,7 @@
     appv:cardCornerRadius="8dp"
     android:layout_margin="16dp">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:orientation="vertical">
@@ -20,17 +20,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Job Title: "
-                android:textSize="25sp"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="Assistant Professor"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:id="@+id/job_title_rv"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="0dp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_700"
                 />
 
         </LinearLayout>
@@ -40,45 +35,25 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Department: "
-                android:textSize="18sp"
-                android:textStyle="bold"
-                />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CSE"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:id="@+id/dept_rv"
-                android:layout_marginLeft="8dp"
-                />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Specialization: "
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:layout_marginLeft="0dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Assistant Professor"
-                android:textSize="18sp"
+                android:text="Machine Learning"
+                android:textSize="14sp"
                 android:id="@+id/spec_rv"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="20dp"
                 />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,15 +62,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date and Time: "
-                android:textSize="18sp"
+                android:text="When posted? "
+                android:textSize="14sp"
                 android:textStyle="bold"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="20-3-2022 06:23 PM"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:id="@+id/date_time_rv"
                 android:layout_marginLeft="8dp"
                 />
@@ -104,15 +79,21 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Delete Draft"
-                android:id="@+id/deleteDraftBtn"/>
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/deleteDraftBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textSize="12dp" />
+
     </LinearLayout>
+
+
+
+
 
 
 </androidx.cardview.widget.CardView>
