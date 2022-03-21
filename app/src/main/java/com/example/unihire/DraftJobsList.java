@@ -50,11 +50,9 @@ public class DraftJobsList extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-
                         Job job = dataSnapshot.getValue(Job.class);
                         if(job.isDraft && job.UnivId.equals(fAuth.getUid()))
                             list.add(job);
-
                 }
                 Collections.sort(list, new Comparator<Job>() {
                     @Override
@@ -66,7 +64,6 @@ public class DraftJobsList extends AppCompatActivity {
                 myAdapterDraft.notifyDataSetChanged();
                 pb.setVisibility(View.INVISIBLE);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
