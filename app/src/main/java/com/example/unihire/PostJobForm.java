@@ -97,6 +97,30 @@ public class PostJobForm extends AppCompatActivity {
                     jobTitle.setText(thisJob.JobTitle);
                     dept.setText(thisJob.Department);
                     spec.setText(thisJob.Specialization);
+                    jobDesc.setText(thisJob.JobDescription);
+
+                    weightage1.setText(String.valueOf(thisJob.Weightage1));
+                    if(thisJob.Weightage1==-1)
+                        weightage1.setText("0");
+                    weightage2.setText(String.valueOf(thisJob.Weightage2));
+                    if(thisJob.Weightage2==-1)
+                        weightage2.setText("0");
+                    weightage3.setText(String.valueOf(thisJob.Weightage3));
+                    if(thisJob.Weightage3==-1)
+                        weightage3.setText("0");
+                    int spinner1pos=adapterState1.getPosition(thisJob.Priority1);
+                    p1Spinner.setSelection(spinner1pos);
+                    int spinner2pos=adapterState2.getPosition(thisJob.Priority2);
+                    p2Spinner.setSelection(spinner2pos);
+                    int spinner3pos=adapterState3.getPosition(thisJob.Priority3);
+                    p3Spinner.setSelection(spinner3pos);
+                    WorkExpInput.setChecked(thisJob.WorkExpInput);
+                    EducationInput.setChecked(thisJob.EducationInput);
+                    PublicationInput.setChecked(thisJob.PublicationInput);
+                    AwardInput.setChecked(thisJob.AwardInput);
+                    ResearchInput.setChecked(thisJob.ResearchInput);
+                    ResumeInput.setChecked(thisJob.ResumeInput);
+
                 }
 
                 @Override
@@ -142,7 +166,11 @@ public class PostJobForm extends AppCompatActivity {
                 boolean resumeInp=ResearchInput.isChecked();
                 boolean canInsert= validateJobForm(job_title,department, specialization, jd, w1,w2,w3,p1,p2,p3,
                 workexpInp, educationInp, publicationInp, awardInp, researchInp);
-                String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
+                String jobId;
+                if(JOBID.equals("NULL"))
+                    jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
+                else
+                    jobId=JOBID;
                 if(canInsert){
                     Job job=new Job(
                             uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
@@ -201,8 +229,12 @@ public class PostJobForm extends AppCompatActivity {
                 boolean publicationInp=PublicationInput.isChecked();
                 boolean awardInp=AwardInput.isChecked();
                 boolean researchInp=ResearchInput.isChecked();
-                boolean resumeInp=ResearchInput.isChecked();
-                String jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
+                boolean resumeInp=ResumeInput.isChecked();
+                String jobId;
+                if(JOBID.equals("NULL"))
+                    jobId=fAuth.getUid()+String.valueOf(getRandomNumber(0,999999));
+                else
+                    jobId=JOBID;
                 Job job=new Job(
                         uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
                         w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
