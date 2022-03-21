@@ -75,18 +75,6 @@ public class PostJobForm extends AppCompatActivity {
         adapterState3.setDropDownViewResource(android.R.layout.simple_spinner_item);
         p3Spinner.setAdapter(adapterState3);
 
-
-        /*@SuppressLint("ResourceType") ArrayAdapter adapter1=new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item,R.array.priority_array);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        p1Spinner.setAdapter(adapter1);*/
-        /*p2Spinner=findViewById(R.id.p2Spinner);
-        @SuppressLint("ResourceType") ArrayAdapter adapter2=new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item,R.array.priority_array);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        p2Spinner.setAdapter(adapter2);
-        p3Spinner=findViewById(R.id.p3Spinner);
-        @SuppressLint("ResourceType") ArrayAdapter adapter3=new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_item,R.array.priority_array);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        p3Spinner.setAdapter(adapter3);*/
         NameInput=findViewById(R.id.NameInput);
         GenderInput=findViewById(R.id.GenderInput);
         PhoneInput=findViewById(R.id.PhoneInput);
@@ -101,7 +89,7 @@ public class PostJobForm extends AppCompatActivity {
         SaveDraftBtn=findViewById(R.id.SaveDraftBtn);
         PostJobFinalBtn=findViewById(R.id.PostJobFinalBtn);
         //Toast.makeText(this, JOBID, Toast.LENGTH_SHORT).show();
-        if(!JOBID.equals("")){
+        if(!JOBID.equals("NULL")){
             reffJob.child(JOBID).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
