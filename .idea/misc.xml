@@ -15,9 +15,6 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_recruiter_login.xml" value="0.2" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_recruiter_registration.xml" value="0.25601750547045954" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/content_post_job_form.xml" value="0.23697916666666666" />
-        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/draft_item.xml" value="0.19427083333333334" />
-        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/draft_item_with_delete.xml" value="0.264" />
-        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/draft_item_without_delete.xml" value="0.19427083333333334" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_dashboard.xml" value="0.3875" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_dashboard_app.xml" value="0.24909420289855072" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_dashboard_rec.xml" value="0.10729166666666666" />
@@ -35,6 +32,7 @@
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/drawable/custom_dropdown.xml" value="0.2205" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/drawable/custom_input.xml" value="0.2205" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/drawable/custom_spinner.xml" value="0.2205" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/drawable/ic_delete.xml" value="0.216" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/drawable/ic_spinner.xml" value="0.216" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/drawable/textinputborder.xml" value="0.2205" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_applicant_home_page.xml" value="0.2526041666666667" />
@@ -50,6 +48,7 @@
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_recruiter_login.xml" value="0.2526041666666667" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_recruiter_registration.xml" value="0.536" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/draft_item.xml" value="0.2526041666666667" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/draft_item_with_delete.xml" value="0.4" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/fragment_dashboard_app.xml" value="0.2526041666666667" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/fragment_dashboard_rec.xml" value="0.2526041666666667" />
         <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/fragment_post_a_job.xml" value="0.2526041666666667" />
