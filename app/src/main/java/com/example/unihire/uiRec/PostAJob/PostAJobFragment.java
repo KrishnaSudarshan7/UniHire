@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
@@ -34,7 +35,7 @@ import java.util.Comparator;
 
 public class PostAJobFragment extends Fragment {
 
-    Button postBtn;
+    ImageView postBtn;
     Button moreBtn;
 
     RecyclerView recyclerView;
@@ -50,7 +51,7 @@ public class PostAJobFragment extends Fragment {
         View view = null;
         view = inflater.inflate(R.layout.fragment_post_a_job, container, false);
         moreBtn = (Button) view.findViewById(R.id.moreBtn);
-        postBtn = (Button) view.findViewById(R.id.postJobBtn);
+        postBtn = (ImageView) view.findViewById(R.id.postJobBtn);
 
         moreBtn.setVisibility(View.INVISIBLE);
         pb=view.findViewById(R.id.PJFragmentPB);
