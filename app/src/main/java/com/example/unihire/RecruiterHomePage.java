@@ -1,6 +1,9 @@
 package com.example.unihire;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -11,7 +14,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.unihire.databinding.ActivityRecruiterHomePageBinding;
-
 public class RecruiterHomePage extends AppCompatActivity {
 
     private ActivityRecruiterHomePageBinding binding;

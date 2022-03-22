@@ -9,12 +9,209 @@
     android:layout_height="match_parent"
     tools:context=".PostJobForm">
 
+    <Button
+        android:id="@+id/PostJobFinalBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_button"
+        app:layout_constraintBottom_toTopOf="@+id/space3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintStart_toEndOf="@+id/SaveDraftBtn"
+        app:layout_constraintTop_toBottomOf="@+id/space2" />
+
+    <EditText
+        android:id="@+id/weightage3"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/textinputborder"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/p3Spinner"
+        app:layout_constraintTop_toBottomOf="@+id/weightage1" />
+
+    <EditText
+        android:id="@+id/weightage1"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textinputborder"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toEndOf="@+id/p1Spinner"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <EditText
+        android:id="@+id/weightage2"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textinputborder"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/p2Spinner"
+        app:layout_constraintTop_toBottomOf="@+id/weightage1" />
+
+    <CheckBox
+        android:id="@+id/ResumeInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="88dp"
+        android:text="Resume"
+        android:buttonTint="#AD0BC8"
+        android:textSize="15dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toEndOf="@+id/ResearchInput"
+        app:layout_constraintTop_toBottomOf="@+id/AddressInput" />
+
+    <CheckBox
+        android:id="@+id/ResearchInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="88dp"
+        android:text="Research Grants"
+        android:buttonTint="#AD0BC8"
+        android:textSize="15dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailInput" />
+
+    <CheckBox
+        android:id="@+id/PublicationInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:text="Publication"
+        android:textSize="15dp"
+
+        android:buttonTint="#AD0BC8"
+        app:layout_constraintEnd_toStartOf="@+id/AwardInput"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toEndOf="@+id/EducationInput"
+        app:layout_constraintTop_toBottomOf="@+id/AddressInput"
+        tools:text="Publication" />
+
+    <CheckBox
+        android:id="@+id/AwardInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
+        android:text="Awards/Honors"
+        android:buttonTint="#AD0BC8"
+        android:textSize="15dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WorkExpInput" />
+
+    <CheckBox
+        android:id="@+id/EducationInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="Education"
+        android:textSize="15dp"
+
+        android:buttonTint="#AD0BC8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailInput" />
+
+    <CheckBox
+        android:id="@+id/WorkExpInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="36dp"
+        android:text="Work Experience"
+        android:buttonTint="#AD0BC8"
+        android:textSize="12.5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PhoneInput" />
+
+    <CheckBox
+        android:id="@+id/EmailInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:checked="true"
+        android:clickable="false"
+        android:text="Email"
+        android:textSize="15dp"
+
+        android:buttonTint="#AD0BC8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameInput" />
+
+    <CheckBox
+        android:id="@+id/AddressInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="12dp"
+        android:checked="true"
+        android:clickable="false"
+        android:text="Address"
+        android:textSize="15dp"
+
+        app:layout_constraintEnd_toStartOf="@+id/WorkExpInput"
+        app:layout_constraintHorizontal_bias="0.692"
+        android:buttonTint="#AD0BC8"
+        app:layout_constraintStart_toEndOf="@+id/EmailInput"
+        app:layout_constraintTop_toBottomOf="@+id/GenderInput"
+        />
+
+    <CheckBox
+        android:id="@+id/GenderInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="4dp"
+        android:checked="true"
+        android:clickable="false"
+        android:text="Gender"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/PhoneInput"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@+id/NameInput"
+        app:layout_constraintTop_toBottomOf="@+id/textView32"
+        android:buttonTint="#AD0BC8"/>
+
+    <CheckBox
+        android:id="@+id/NameInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:checked="true"
+        android:clickable="false"
+        android:text="Name"
+        android:textSize="15dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32"
+        android:buttonTint="#AD0BC8"
+        />
+
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Post A Job"
-        android:textSize="20sp"
+        android:textColor="#AD0BC8"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,59 +220,307 @@
         app:layout_constraintVertical_bias="0.068" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="270dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/jobTitle"
+        android:background="@drawable/textinputborder"
+        android:padding="12dp"
+        android:layout_width="329dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Job Title"
         android:inputType="textPersonName"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="273dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="12dp"
+        android:id="@+id/dept"
+        android:layout_width="329dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/textinputborder"
         android:ems="10"
         android:hint="Department"
         android:inputType="textPersonName"
+        android:padding="12dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/jobTitle" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="275dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/spec"
+        android:layout_width="329dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/textinputborder"
         android:ems="10"
         android:hint="Specialization"
         android:inputType="textPersonName"
+        android:padding="12dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/dept" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="271dp"
-        android:layout_height="522dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/jobDesc"
+        android:layout_width="329dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/textinputborder"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Job Description"
         android:inputType="textMultiLine"
+        android:padding="12dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+        app:layout_constraintTop_toBottomOf="@+id/spec" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Select Fields"
+        android:textColor="#AD0BC8"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobDesc" />
+
+    <CheckBox
+        android:id="@+id/PhoneInput"
+        android:layout_width="110dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:checked="true"
+        android:clickable="false"
+        android:text="Phone Number"
+        android:buttonTint="#AD0BC8"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Select Priority"
+        android:textColor="#AD0BC8"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ResearchInput" />
+
+    <Spinner
+        android:id="@+id/p1Spinner"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_spinner"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <Spinner
+        android:id="@+id/p3Spinner"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_spinner"
+        android:padding="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p2Spinner" />
+
+    <Spinner
+        android:id="@+id/p2Spinner"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_spinner"
+        android:padding="12dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p1Spinner" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="118dp"
+        android:layout_height="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/p3Spinner" />
+
+    <Button
+        android:id="@+id/SaveDraftBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="4dp"
+        android:text="save draft"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Space
+        android:id="@+id/space3"
+        android:layout_width="180dp"
+        android:layout_height="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SaveDraftBtn" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="4dp"
+        android:text="Job Title"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/jobTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="2dp"
+        android:text="Job Description"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/jobDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="252dp"
+        android:layout_marginBottom="4dp"
+        android:text="Department"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="3dp"
+        android:text="Specialization"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="2dp"
+        android:text="Priority 1"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/p1Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="1dp"
+        android:text="Priority 2"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/p1Spinner"
+        app:layout_constraintBottom_toTopOf="@+id/p2Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="1dp"
+        android:text="Priority 3"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/p3Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="2dp"
+        android:text="Weightage 1"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/weightage1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="3dp"
+        android:text="Weightage 2"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/weightage2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="2dp"
+        android:text="Weightage 3"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/weightage3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

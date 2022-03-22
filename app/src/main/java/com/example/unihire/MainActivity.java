@@ -1,6 +1,7 @@
 package com.example.unihire;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.graphics.Paint;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         Button goToLoginRec=findViewById(R.id.goToLoginBtnRec);
         Button goToLoginApp=findViewById(R.id.goToLoginBtnApp);
         TextView goToRegApp=findViewById(R.id.goToRegApp);
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,RecruiterLogin.class);
+                intent.putExtra("JOBID","NULL");
                 startActivity(intent);
             }
         });
