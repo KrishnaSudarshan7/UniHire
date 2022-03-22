@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,11 +33,12 @@ public class DraftJobsList extends AppCompatActivity {
     ArrayList<Job>list;
     FirebaseAuth fAuth;
     ProgressBar pb;
+    Button bck;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_draft_jobs_list);
-
+        bck=findViewById(R.id.backToHomeRec);
         pb=findViewById(R.id.SavedDraftPB);
         pb.setVisibility(View.VISIBLE);
         recyclerView=findViewById(R.id.recyclerViewDrafts);
@@ -46,6 +49,12 @@ public class DraftJobsList extends AppCompatActivity {
         list=new ArrayList<>();
         myAdapterDraft=new MyAdapterDraft(this,list);
         recyclerView.setAdapter(myAdapterDraft);
+        bck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DraftJobsList.this,RecruiterHomePage.class));
+            }
+        });
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -69,6 +78,10 @@ public class DraftJobsList extends AppCompatActivity {
 
             }
         });
+
+    }
+    @Override
+    public void onBackPressed () {
 
     }
 }

@@ -79,8 +79,14 @@ public class MyAdapterDraft extends RecyclerView.Adapter<MyAdapterDraft.MyViewHo
                     //Toast.makeText(context, jobID, Toast.LENGTH_SHORT).show();
                     DatabaseReference reff= FirebaseDatabase.getInstance().getReference("Job");
                     reff.child(jobID).removeValue();
-                    Intent intent=new Intent(context, DraftJobsList.class);
-                    context.startActivity(intent);
+                    if(context.equals(DraftJobsList.class)){
+                        Intent intent=new Intent(context, DraftJobsList.class);
+                        context.startActivity(intent);
+                    }
+                    else{
+                        Intent intent=new Intent(context, RecruiterHomePage.class);
+                        context.startActivity(intent);
+                    }
                 }
             });
         }
