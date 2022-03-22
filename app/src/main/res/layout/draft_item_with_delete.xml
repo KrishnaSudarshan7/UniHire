@@ -6,12 +6,15 @@
     xmlns:appv="http://schemas.android.com/apk/res-auto"
     appv:cardElevation="8dp"
     appv:cardCornerRadius="8dp"
-    android:layout_margin="16dp">
+    android:layout_margin="16dp"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,28 +33,57 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CSE"
-                android:textSize="14sp"
                 android:id="@+id/dept_rv"
-                android:layout_marginLeft="0dp"
-                />
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Machine Learning"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_text_draft"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="CSE"
+                android:textColor="@color/white"
                 android:textSize="14sp"
+                appv:layout_constraintBottom_toBottomOf="parent"
+                appv:layout_constraintEnd_toStartOf="@+id/spec_rv"
+                appv:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
                 android:id="@+id/spec_rv"
-                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_text_draft"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Machine Learning"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                appv:layout_constraintBottom_toBottomOf="parent"
+                appv:layout_constraintEnd_toEndOf="parent"
+                appv:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/deleteDraftBtn"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="250dp"
+                android:background="@drawable/custom_button"
+                android:drawableStart="@drawable/ic_delete"
+                appv:layout_constraintBottom_toBottomOf="parent"
+                appv:layout_constraintEnd_toEndOf="parent"
+                appv:layout_constraintStart_toStartOf="parent"
+                android:paddingLeft="0.8dp"
                 />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -61,9 +93,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="When posted? "
+                android:text="Saved On: "
                 android:textSize="14sp"
                 android:textStyle="bold"
+                android:textColor="@color/appcolor"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -72,6 +105,7 @@
                 android:textSize="14sp"
                 android:id="@+id/date_time_rv"
                 android:layout_marginLeft="8dp"
+                android:textColor="@color/appcolor"
                 />
 
         </LinearLayout>
@@ -81,14 +115,7 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/deleteDraftBtn"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:background="@drawable/custom_button"
-            android:drawableStart="@drawable/ic_delete"
-            android:layout_marginLeft="240dp"
-            />
+
 
 
     </LinearLayout>
