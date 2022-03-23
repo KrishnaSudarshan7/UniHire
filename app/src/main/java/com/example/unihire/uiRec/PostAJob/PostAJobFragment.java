@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,6 +47,8 @@ public class PostAJobFragment extends Fragment {
     FirebaseAuth fAuth;
     ProgressBar pb;
 
+    //TextView noJobText;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = null;
@@ -60,6 +63,8 @@ public class PostAJobFragment extends Fragment {
         ref=FirebaseDatabase.getInstance().getReference();
         ref= FirebaseDatabase.getInstance().getReference("Job");
         fAuth=FirebaseAuth.getInstance();
+        //noJobText=(TextView) view.findViewById(R.id.noJobText);
+        //noJobText.setVisibility(View.INVISIBLE);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         list=new ArrayList<>();
@@ -85,7 +90,12 @@ public class PostAJobFragment extends Fragment {
                     list1.add(list.get(i));
                 }
                 pb.setVisibility(View.INVISIBLE);
-                moreBtn.setVisibility(View.VISIBLE);
+                if(list.size()!=0){
+                    moreBtn.setVisibility(View.VISIBLE);
+                }else{
+                    //noJobText.setVisibility(View.VISIBLE);
+                }
+
                 myAdapterDraft.notifyDataSetChanged();
             }
             @Override
