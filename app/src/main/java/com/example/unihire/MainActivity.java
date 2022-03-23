@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        Button goToLoginRec=findViewById(R.id.goToLoginBtnRec);
-        Button goToLoginApp=findViewById(R.id.goToLoginBtnApp);
+        ImageView goToLoginRec=findViewById(R.id.goToLoginBtnRec);
+        ImageView goToLoginApp=findViewById(R.id.goToLoginBtnApp);
         TextView goToRegApp=findViewById(R.id.goToRegApp);
         TextView goToRegRec=findViewById(R.id.goToRegRec);
         goToRegApp.setPaintFlags(goToRegApp.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
