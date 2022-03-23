@@ -36,6 +36,15 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_search_job.xml" value="0.24909420289855072" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/menu/bottom_nav_menu_rec.xml" value="0.10729166666666666" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_applicant_home_page.xml" value="0.2526041666666667" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_applicant_login.xml" value="0.264" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_applicant_registration.xml" value="0.2" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_draft_jobs_list.xml" value="0.2526041666666667" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_forgot_password.xml" value="0.264" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_main.xml" value="0.2526041666666667" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_post_job_form.xml" value="0.4" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/activity_recruiter_login.xml" value="0.264" />
+        <entry key="..\:/Sudarshan/E-Books-Clg/6th-SEM/Software Engineering- CSE314/Project/Android App/app/src/main/res/layout/draft_item_with_delete.xml" value="0.4" />
       </map>
     </option>
   </component>
