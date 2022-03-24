@@ -3,7 +3,11 @@
     <string name="title_activity_recruiter_home_page">RecruiterHomePage</string>
     <string name="title_postjob">Post a Job</string>
     <string name="title_dashboard">Dashboard</string>
+    <string name="title_search_jobs">Search Jobs</string>
     <string name="title_profile">Profile</string>
+    <string name="title_activity_applicant_home_page">ApplicantHomePage</string>
+    <string name="title_home">Search A Job</string>
+    <string name="title_notifications">Profile</string>
     <string-array name="state_array">
         <item>Select state</item>
         <item>Tamilnadu</item>
@@ -13,6 +17,17 @@
         <item>Karnataka</item>
 
     </string-array>
+
+    <string-array name="priority_array">
+        <item>Education</item>
+        <item>Work Experience</item>
+        <item>Publication</item>
+        <item>Awards/Honors</item>
+        <item>Research Grants</item>
+
+    </string-array>
+
+
     <string-array name="countries_array">
         <item>Select Country</item>
         <item>Afghanistan</item>

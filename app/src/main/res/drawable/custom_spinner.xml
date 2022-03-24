@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <stroke android:color="#AD0BC8"
+                        android:width="2.5dp"/>
+                    <solid android:color="@color/white"></solid>
+                    <corners android:radius="10dp"/>
+                </shape>
+            </item>
+            <item android:drawable="@drawable/ic_spinner"
+                android:gravity="end"
+                android:right="16dp">
+
+            </item>
+        </layer-list>
+    </item>
+
+</selector>

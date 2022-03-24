@@ -1,4 +1,4 @@
-package com.example.unihire.ui.PostAJob;
+package com.example.unihire.uiRec.PostAJob;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

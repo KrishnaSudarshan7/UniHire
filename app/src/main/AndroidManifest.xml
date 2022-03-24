@@ -10,6 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniHire">
         <activity
+            android:name=".Edit_Profile_Rec"
+            android:exported="false" />
+        <activity
+            android:name=".Applicant_Edit_Profile"
+            android:exported="false" />
+        <activity
+            android:name=".DraftJobsList"
+            android:exported="false" />
+        <activity
+            android:name=".ApplicantHomePage"
+            android:exported="false"
+            android:label="@string/title_activity_applicant_home_page" />
+        <activity
             android:name=".PostJobForm"
             android:exported="false" />
         <activity

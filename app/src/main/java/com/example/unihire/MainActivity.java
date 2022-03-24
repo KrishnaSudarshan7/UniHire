@@ -1,12 +1,14 @@
 package com.example.unihire;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button goToLoginRec=findViewById(R.id.goToLoginBtnRec);
-        Button goToLoginApp=findViewById(R.id.goToLoginBtnApp);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        ImageView goToLoginRec=findViewById(R.id.goToLoginBtnRec);
+        ImageView goToLoginApp=findViewById(R.id.goToLoginBtnApp);
         TextView goToRegApp=findViewById(R.id.goToRegApp);
         TextView goToRegRec=findViewById(R.id.goToRegRec);
         goToRegApp.setPaintFlags(goToRegApp.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,RecruiterLogin.class);
+                intent.putExtra("JOBID","NULL");
                 startActivity(intent);
             }
         });

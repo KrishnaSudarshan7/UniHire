@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_postjob">
+    app:startDestination="@+id/navigation_search_jobs">
 
     <fragment
-        android:id="@+id/navigation_postjob"
-        android:name="com.example.unihire.ui.PostAJob.PostAJobFragment"
-        android:label="@string/title_postjob"
-        tools:layout="@layout/fragment_post_a_job" />
+        android:id="@+id/navigation_search_jobs"
+        android:name="com.example.unihire.ui.searchJobs.SearchJobsFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_search_job" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.unihire.ui.dashboard.DashboardFragment"
+        android:name="com.example.unihire.ui.dashboardApp.DashboardFragmentApp"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_dashboard_app" />
 
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.example.unihire.ui.Profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/navigation_Profile"
+        android:name="com.example.unihire.ui.profileApp.profileFragmentApp"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_profile_app" />
 </navigation>
