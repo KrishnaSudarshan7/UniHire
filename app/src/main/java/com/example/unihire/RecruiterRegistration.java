@@ -178,7 +178,8 @@ public class RecruiterRegistration extends AppCompatActivity implements AdapterV
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()){
-                                        Toast.makeText(RecruiterRegistration.this,"Registration Successful", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(RecruiterRegistration.this,"Registration Successful",
+                                                Toast.LENGTH_SHORT).show();
                                         progressbar.setVisibility(View.INVISIBLE);
                                         refUnivAddress.child(uid).setValue(univAddress).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
