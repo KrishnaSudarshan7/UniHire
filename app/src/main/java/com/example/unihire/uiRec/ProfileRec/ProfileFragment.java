@@ -25,7 +25,16 @@ public class ProfileFragment extends Fragment {
         View view = null;
         view = inflater.inflate(R.layout.fragment_profile_rec, container, false);
 
+
+
+
+
         text=(TextView) view.findViewById(R.id.profileText); //This is how you from xml
+
+
+
+
+
         edit=(Button) view.findViewById(R.id.editRecProfBtn);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
