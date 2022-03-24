@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniHire">
         <activity
+            android:name=".Edit_Profile_Rec"
+            android:exported="false" />
+        <activity
             android:name=".Applicant_Edit_Profile"
             android:exported="false" />
         <activity

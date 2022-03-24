@@ -7,7 +7,7 @@
     tools:context=".Applicant_Edit_Profile">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView51"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit Profile Page"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.037" />
 
     <TextView
-        android:id="@+id/textView45"
+        android:id="@+id/asdasdas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -33,33 +33,33 @@
         app:layout_constraintVertical_bias="0.157" />
 
     <TextView
-        android:id="@+id/textView48"
+        android:id="@+id/textView481"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DP Link: "
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/reDP"
+        app:layout_constraintEnd_toStartOf="@+id/aeDP"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView47"
+        app:layout_constraintTop_toBottomOf="@+id/textView471"
         app:layout_constraintVertical_bias="0.111" />
 
     <TextView
-        android:id="@+id/textView47"
+        android:id="@+id/textView471"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Phone Number:"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/rePhoneNum"
+        app:layout_constraintEnd_toStartOf="@+id/aePhoneNum"
         app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView46"
         app:layout_constraintVertical_bias="0.072" />
 
     <EditText
-        android:id="@+id/reHeadline"
+        android:id="@+id/aeURL"
         android:layout_width="209dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -72,11 +72,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reDP"
+        app:layout_constraintTop_toBottomOf="@+id/aeDP"
         app:layout_constraintVertical_bias="0.045" />
 
     <EditText
-        android:id="@+id/reAbout"
+        android:id="@+id/aeAbout"
         android:layout_width="208dp"
         android:layout_height="234dp"
         android:ems="10"
@@ -90,37 +90,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reHeadline"
+        app:layout_constraintTop_toBottomOf="@+id/aeURL"
         app:layout_constraintVertical_bias="0.11" />
 
     <TextView
-        android:id="@+id/textView49"
+        android:id="@+id/textView491"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Headline:"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/reHeadline"
+        app:layout_constraintEnd_toStartOf="@+id/aeURL"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView48"
+        app:layout_constraintTop_toBottomOf="@+id/textView481"
         app:layout_constraintVertical_bias="0.12" />
 
     <TextView
-        android:id="@+id/textView50"
+        android:id="@+id/textView501"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="About:"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/reAbout"
+        app:layout_constraintEnd_toStartOf="@+id/aeAbout"
         app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/textView491"
         app:layout_constraintVertical_bias="0.092" />
 
     <EditText
-        android:id="@+id/rePhoneNum"
+        android:id="@+id/aePhoneNum"
         android:layout_width="214dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -133,11 +133,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.725"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reEmail"
+        app:layout_constraintTop_toBottomOf="@+id/aeEmail"
         app:layout_constraintVertical_bias="0.041" />
 
     <EditText
-        android:id="@+id/reDP"
+        android:id="@+id/aeDP"
         android:layout_width="213dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
@@ -151,11 +151,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rePhoneNum"
+        app:layout_constraintTop_toBottomOf="@+id/aePhoneNum"
         app:layout_constraintVertical_bias="0.009" />
 
     <TextView
-        android:id="@+id/reEmail"
+        android:id="@+id/aeEmail"
         android:layout_width="229dp"
         android:layout_height="29dp"
         android:text="first@last.com"
@@ -166,7 +166,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reName"
+        app:layout_constraintTop_toBottomOf="@+id/aeName"
         app:layout_constraintVertical_bias="0.047" />
 
     <TextView
@@ -176,14 +176,14 @@
         android:text="Email:"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/reEmail"
+        app:layout_constraintEnd_toStartOf="@+id/aeEmail"
         app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView45"
+        app:layout_constraintTop_toBottomOf="@+id/asdasdas"
         app:layout_constraintVertical_bias="0.046" />
 
     <TextView
-        android:id="@+id/reName"
+        android:id="@+id/aeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -195,7 +195,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toEndOf="@+id/textView45"
+        app:layout_constraintStart_toEndOf="@+id/asdasdas"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.144" />
 
@@ -210,7 +210,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reAbout"
+        app:layout_constraintTop_toBottomOf="@+id/aeAbout"
         app:layout_constraintVertical_bias="0.385" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

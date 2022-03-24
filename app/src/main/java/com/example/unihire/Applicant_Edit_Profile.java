@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,12 +32,12 @@ public class Applicant_Edit_Profile extends AppCompatActivity {
         fAuth=FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference("Applicant");
 
-        name=findViewById(R.id.reName);
-        email=findViewById(R.id.reEmail);
-        PhoneNumber=findViewById(R.id.rePhoneNum);
-        About=findViewById(R.id.reAbout);
-        Headline=findViewById(R.id.reHeadline);
-        DP_Link=findViewById(R.id.reDP);
+        name=findViewById(R.id.aeName);
+        email=findViewById(R.id.aeEmail);
+        PhoneNumber=findViewById(R.id.aePhoneNum);
+        About=findViewById(R.id.aeAbout);
+        Headline=findViewById(R.id.aeURL);
+        DP_Link=findViewById(R.id.aeDP);
         submit=findViewById(R.id.editProfileBtnRec);
 
 
