@@ -30,12 +30,13 @@ public class Job {
     }
 
     public String UnivId,JobTitle,Department,Specialization,JobDescription,Priority1,Priority2,Priority3,jobID;
-    public String PostedDateTime;
+    public String jobStatus;
+    public String PostedDateTime,closedDateTime;
     public int Weightage1,Weightage2,Weightage3;
     public boolean NameInput,GenderInput,PhoneInput,EmailInput,AddressInput,WorkExpInput,EducationInput,PublicationInput,AwardInput,ResearchInput,ResumeInput;
     public boolean isDraft;
     public Job(
-            String UnivId,String PostedDateTime,
+            String UnivId,String PostedDateTime,String closedDateTime,String JobStatus,
             String JobTitle, String Department, String Specialization, String JobDescription,
             String Priority1,String Priority2, String Priority3,String jobID, int Weightage1,int Weightage2,int Weightage3,
             boolean WorkExpInput, boolean EducationInput, boolean PublicationInput,boolean AwardInput,
@@ -67,5 +68,7 @@ public class Job {
         this.ResumeInput=ResumeInput;
         this.isDraft=isDraft;
         this.jobID=jobID;
+        this.jobStatus=JobStatus;
+        this.closedDateTime=closedDateTime;
     }
 }

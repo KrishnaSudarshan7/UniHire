@@ -173,7 +173,7 @@ public class PostJobForm extends AppCompatActivity {
                     jobId=JOBID;
                 if(canInsert){
                     Job job=new Job(
-                            uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
+                            uid,dateTime,"null","active",job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
                             w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
                             ,false
                     );
@@ -236,7 +236,7 @@ public class PostJobForm extends AppCompatActivity {
                 else
                     jobId=JOBID;
                 Job job=new Job(
-                        uid,dateTime,job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
+                        uid,dateTime,"null","null",job_title,department,specialization,jd,p1,p2,p3,jobId,w1,
                         w2,w3,workexpInp,educationInp,publicationInp,awardInp,researchInp,resumeInp
                         ,true
                 );
@@ -328,4 +328,6 @@ public class PostJobForm extends AppCompatActivity {
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
+
+
 }
