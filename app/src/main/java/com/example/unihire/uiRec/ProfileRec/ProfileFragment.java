@@ -62,7 +62,7 @@ public class ProfileFragment extends Fragment {
                 name = dataSnapshot.child(uId).child("univName").getValue().toString();
                 mail = dataSnapshot.child(uId).child("Email").getValue().toString();
                 about= dataSnapshot.child(uId).child("about").getValue().toString();
-                phone = dataSnapshot.child(uId).child("UnivNum").getValue().toString();
+                phone = dataSnapshot.child(uId).child("univNum").getValue().toString();
                 univUGCID= dataSnapshot.child(uId).child("univUGCID").getValue().toString();
 
                 nameTxtView.setText(name);
@@ -84,7 +84,7 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot1) {
                 String aId=FirebaseAuth.getInstance().getUid();
                 name1 = dataSnapshot1.child(aId).child("AddressL1").getValue().toString();
-                name2= dataSnapshot1.child(aId).child("city").getValue().toString();
+                name2= dataSnapshot1.child(aId).child("City").getValue().toString();
                 name3 = dataSnapshot1.child(aId).child("State").getValue().toString();
                 name4 = dataSnapshot1.child(aId).child("Country").getValue().toString();
 
