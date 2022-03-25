@@ -15,21 +15,43 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225"
-        />
+        app:layout_constraintVertical_bias="0.004" />
 
     <Button
         android:id="@+id/signOutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/custom_button"
         android:text="Sign Out"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ActiveJobsBtn"
+        android:layout_width="410dp"
+        android:layout_height="250dp"
+        android:src="@drawable/active_jobs"
+        app:layout_constraintBottom_toTopOf="@+id/signOutBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dashBoardText" />
+        app:layout_constraintTop_toBottomOf="@+id/dashBoardText"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <ImageView
+        android:id="@+id/ClosedJobsBtn"
+        android:layout_width="392dp"
+        android:layout_height="289dp"
+        android:src="@drawable/closed_jobs"
+        app:layout_constraintBottom_toTopOf="@+id/signOutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ActiveJobsBtn"
+        app:layout_constraintVertical_bias="0.101" />
 </androidx.constraintlayout.widget.ConstraintLayout>
