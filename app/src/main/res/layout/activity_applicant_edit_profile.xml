@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit Profile Page"
+        android:textColor="#AD0BC8"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.038" />
 
     <TextView
         android:id="@+id/asdasdas"
@@ -27,6 +28,7 @@
         android:layout_marginStart="40dp"
         android:text="Name: "
         android:textAlignment="viewStart"
+        android:textColor="#AD0BC8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,6 +40,7 @@
         android:layout_height="wrap_content"
         android:text="DP Link: "
         android:textAlignment="viewStart"
+        android:textColor="#AD0BC8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aeDP"
         app:layout_constraintHorizontal_bias="0.433"
@@ -51,12 +54,13 @@
         android:layout_height="wrap_content"
         android:text=" Phone Number:"
         android:textAlignment="viewStart"
+        android:textColor="#AD0BC8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aePhoneNum"
-        app:layout_constraintHorizontal_bias="0.847"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView46"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.082" />
 
     <EditText
         android:id="@+id/aeURL"
@@ -64,7 +68,7 @@
         android:layout_height="48dp"
         android:ems="10"
         android:hint="Headline"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:padding="5dp"
         android:inputType="textPersonName"
         android:textSize="14sp"
@@ -82,7 +86,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="About"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:padding="5dp"
         android:inputType="textMultiLine"
         android:textSize="14sp"
@@ -99,6 +103,7 @@
         android:layout_height="wrap_content"
         android:text="Headline:"
         android:textAlignment="viewStart"
+        android:textColor="#AD0BC8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aeURL"
         app:layout_constraintHorizontal_bias="0.448"
@@ -115,6 +120,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aeAbout"
         app:layout_constraintHorizontal_bias="0.38"
+        android:textColor="#AD0BC8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView491"
         app:layout_constraintVertical_bias="0.092" />
@@ -126,7 +132,7 @@
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="number"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:padding="5dp"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -143,7 +149,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Display Picture Link"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:padding="5dp"
         android:inputType="textPersonName"
         android:textSize="14sp"
@@ -174,6 +180,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email:"
+        android:textColor="#AD0BC8"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aeEmail"

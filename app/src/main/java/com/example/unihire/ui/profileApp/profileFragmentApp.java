@@ -6,12 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.unihire.Applicant_Edit_Profile;
 import com.example.unihire.R;
@@ -35,7 +34,6 @@ public class profileFragmentApp extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = null;
         view = inflater.inflate(R.layout.fragment_profile_app, container, false);
-        //visal
         nameTxtView=(TextView) view.findViewById(R.id.editTextTextPersonName);
         workTxtView=(TextView) view.findViewById(R.id.editTextTextPersonName2);
         emailTxtView=(TextView) view.findViewById(R.id.editTextTextEmailAddress);
@@ -46,7 +44,7 @@ public class profileFragmentApp extends Fragment {
         // Read from the database
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Applicant");
         rootRef.addValueEventListener(new ValueEventListener() {
-            String fname, mail, Headline, About, phone;
+            String fname, mail, Headline, About, phone,gmaps,website;
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -57,11 +55,14 @@ public class profileFragmentApp extends Fragment {
                 About = dataSnapshot.child(uId).child("About").getValue().toString();
                 phone = dataSnapshot.child(uId).child("PhoneNum").getValue().toString();
 
+
                 nameTxtView.setText(fname);
                 emailTxtView.setText(mail);
                 workTxtView.setText(Headline);
                 phoneTxtView.setText(phone);
                 videoTxtView.setText(About);
+
+
             }
 
             @Override
