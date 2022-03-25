@@ -8,6 +8,9 @@ import java.io.Console;
 
 public class Recruiter {
     public String univName,univURL,univUGCID,univNum,Email,about,gMapsLink,DP_Link;
+    public Recruiter(){
+
+    }
     public Recruiter(String univName,String univURL,String univUGCID,String univNum,String Email){
 
         this.univName=univName;
