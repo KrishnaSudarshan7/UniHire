@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:appv="http://schemas.android.com/apk/res-auto"
+    appv:cardElevation="8dp"
+    appv:cardCornerRadius="8dp"
+    android:layout_margin="16dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Assistant Professor"
+                android:textSize="18sp"
+                android:id="@+id/job_title_aj"
+                android:layout_marginLeft="0dp"
+                android:textStyle="bold"
+                android:textColor="@color/appcolor"
+                />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/dept_aj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_text_draft"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="CSE"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                appv:layout_constraintBottom_toBottomOf="parent"
+                appv:layout_constraintEnd_toStartOf="@+id/spec_aj"
+                appv:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/spec_aj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/custom_text_draft"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Machine Learning"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                appv:layout_constraintBottom_toBottomOf="parent"
+                appv:layout_constraintEnd_toEndOf="parent"
+                appv:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posted On: "
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/appcolor"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20-3-2022 06:23 PM"
+                android:textSize="14sp"
+                android:id="@+id/date_time_aj"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/appcolor"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
