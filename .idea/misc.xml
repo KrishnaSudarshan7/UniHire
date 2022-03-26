@@ -9,7 +9,7 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.359" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/drawable/job_item_closed.xml" value="0.243" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/drawable/textinputborder.xml" value="0.243" />
-        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_edit_profile.xml" value="0.1" />
+        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_edit_profile.xml" value="0.264" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_home_page.xml" value="0.2526041666666667" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_login.xml" value="0.2" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_registration.xml" value="0.264" />
@@ -39,12 +39,13 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_postajob.xml" value="0.2526041666666667" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_profile.xml" value="0.2526041666666667" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_profile_app.xml" value="0.24909420289855072" />
-        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_profile_rec.xml" value="0.2105978260869565" />
+        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_profile_rec.xml" value="0.536" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/fragment_search_job.xml" value="0.24909420289855072" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/job_item_active.xml" value="0.4" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/job_item_closed.xml" value="0.23697916666666666" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/menu/bottom_nav_menu_rec.xml" value="0.10729166666666666" />
+        <entry key="..\:/MAIN/UniHire/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1665" />
         <entry key="..\:/UniHire/app/src/main/res/layout/fragment_profile_rec.xml" value="0.264" />
       </map>
     </option>
