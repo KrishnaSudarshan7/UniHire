@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ public class ProfileFragment extends Fragment {
     TextView mailTxtView, phoneTxtView, univUGCIDTxtView ,collegeURL,gmapsURL,AboutText;
     Button edit;
     FirebaseDatabase database;
+    ProgressBar pb;
     private static final String USERS = "University";
     private static final String ahc = "UniversityAddress";
     FirebaseAuth fAuth;
@@ -40,6 +42,8 @@ public class ProfileFragment extends Fragment {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("University");
         DatabaseReference broRef = FirebaseDatabase.getInstance().getReference("UniversityAddress");
 
+        pb=(ProgressBar) view.findViewById(R.id.progressBarRecProf);
+        pb.setVisibility(View.VISIBLE);
         nameTxtView = (TextView) view.findViewById(R.id.editTextTextPersonName6);
         aboutTxtView = (TextView) view.findViewById(R.id.editTextTextPersonName15);
         mailTxtView = (TextView) view.findViewById(R.id.editTextTextEmailAddress2);
@@ -102,6 +106,8 @@ public class ProfileFragment extends Fragment {
                 name2TxtView.setText(name2);
                 name3TxtView.setText(name3);
                 name4TxtView.setText(name4);
+
+                pb.setVisibility(View.INVISIBLE);
             }
 
             @Override
