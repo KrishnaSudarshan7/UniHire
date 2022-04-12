@@ -14,8 +14,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-<<<<<<< Updated upstream
-=======
     <TextView
         android:id="@+id/textView45"
         android:layout_width="wrap_content"
@@ -29,5 +27,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
->>>>>>> Stashed changes
 </androidx.constraintlayout.widget.ConstraintLayout>

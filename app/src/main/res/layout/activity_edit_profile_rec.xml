@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aeName"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <TextView
         android:id="@+id/textView2"
@@ -52,7 +52,7 @@
         android:id="@+id/aePhoneNum"
         android:layout_width="214dp"
         android:layout_height="48dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:ems="10"
         android:hint="Phone Number"
         android:inputType="number"
@@ -69,7 +69,7 @@
         android:id="@+id/aeAbout"
         android:layout_width="207dp"
         android:layout_height="181dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:ems="10"
         android:gravity="start|top"
         android:hint="About"
@@ -100,9 +100,9 @@
         android:id="@+id/aeURL"
         android:layout_width="209dp"
         android:layout_height="48dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:ems="10"
-        android:hint="Headline"
+        android:hint="Website Link"
         android:inputType="textPersonName"
         android:padding="5dp"
         android:textSize="14sp"
@@ -144,7 +144,7 @@
         android:layout_width="213dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:ems="10"
         android:hint="Display Picture Link"
         android:inputType="textPersonName"
@@ -174,9 +174,9 @@
         android:id="@+id/aeGMAPS"
         android:layout_width="209dp"
         android:layout_height="48dp"
-        android:background="@drawable/custom_input"
+        android:background="@drawable/textinputborder"
         android:ems="10"
-        android:hint="Headline"
+        android:hint="Google Maps Link"
         android:inputType="textPersonName"
         android:padding="5dp"
         android:textSize="14sp"
@@ -207,8 +207,8 @@
         android:text="UGC ID:"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/aeEmail"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintEnd_toStartOf="@+id/aeUGC"
+        app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.04" />
@@ -238,7 +238,7 @@
         app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aeName"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/aeName"
@@ -269,6 +269,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aeAbout"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintVertical_bias="0.25" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

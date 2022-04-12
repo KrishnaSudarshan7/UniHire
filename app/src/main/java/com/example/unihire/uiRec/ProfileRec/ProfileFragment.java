@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,9 +25,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragment extends Fragment {
     TextView nameTxtView, aboutTxtView,name1TxtView,name4TxtView,name3TxtView,name2TxtView;
-    TextView mailTxtView, phoneTxtView, univUGCIDTxtView;
+    TextView mailTxtView, phoneTxtView, univUGCIDTxtView ,collegeURL,gmapsURL,AboutText;
     Button edit;
     FirebaseDatabase database;
+    ProgressBar pb;
     private static final String USERS = "University";
     private static final String ahc = "UniversityAddress";
     FirebaseAuth fAuth;
@@ -40,6 +42,8 @@ public class ProfileFragment extends Fragment {
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("University");
         DatabaseReference broRef = FirebaseDatabase.getInstance().getReference("UniversityAddress");
 
+        pb=(ProgressBar) view.findViewById(R.id.progressBarRecProf);
+        pb.setVisibility(View.VISIBLE);
         nameTxtView = (TextView) view.findViewById(R.id.editTextTextPersonName6);
         aboutTxtView = (TextView) view.findViewById(R.id.editTextTextPersonName15);
         mailTxtView = (TextView) view.findViewById(R.id.editTextTextEmailAddress2);
@@ -49,12 +53,16 @@ public class ProfileFragment extends Fragment {
         name2TxtView = (TextView) view.findViewById(R.id.editTextTextPersonName12);
         name3TxtView = (TextView) view.findViewById(R.id.editTextTextPersonName13);
         name4TxtView = (TextView) view.findViewById(R.id.editTextTextPersonName5);
+        gmapsURL=(TextView) view.findViewById(R.id.GmapsText);
+        AboutText=(TextView) view.findViewById(R.id.editTextTextPersonName15);
+        collegeURL=(TextView) view.findViewById(R.id.collegeURLText);
         edit = (Button) view.findViewById(R.id.editRecProfBtn);
 
         fAuth=FirebaseAuth.getInstance();
         // Read from the database
         rootRef.addValueEventListener(new ValueEventListener() {
-            String name, mail, about, phone,univUGCID;
+            String name, mail, about, phone,univUGCID,gmaps,website,about1;
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -64,12 +72,17 @@ public class ProfileFragment extends Fragment {
                 about= dataSnapshot.child(uId).child("about").getValue().toString();
                 phone = dataSnapshot.child(uId).child("univNum").getValue().toString();
                 univUGCID= dataSnapshot.child(uId).child("univUGCID").getValue().toString();
+                gmaps = dataSnapshot.child(uId).child("gMapsLink").getValue().toString();
+                website = dataSnapshot.child(uId).child("univURL").getValue().toString();
+                about1=dataSnapshot.child(uId).child("about").getValue().toString();
 
                 nameTxtView.setText(name);
                 mailTxtView.setText(mail);
                 phoneTxtView.setText(phone);
                 aboutTxtView.setText(about);
                 univUGCIDTxtView.setText(univUGCID);
+                collegeURL.setText(website);
+                gmapsURL.setText(gmaps);
             }
 
             @Override
@@ -88,10 +101,13 @@ public class ProfileFragment extends Fragment {
                 name3 = dataSnapshot1.child(aId).child("State").getValue().toString();
                 name4 = dataSnapshot1.child(aId).child("Country").getValue().toString();
 
+
                 name1TxtView.setText(name1);
                 name2TxtView.setText(name2);
                 name3TxtView.setText(name3);
                 name4TxtView.setText(name4);
+
+                pb.setVisibility(View.INVISIBLE);
             }
 
             @Override

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,7 +24,7 @@ public class DashboardFragment extends Fragment {
 
     TextView text;
     Button SignOut;
-    Button ViewActiveJobs,ViewClosedJobs;
+    ImageView ViewActiveJobs,ViewClosedJobs;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = null;
