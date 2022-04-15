@@ -1,8 +1,10 @@
 package com.example.unihire;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
@@ -20,7 +22,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
@@ -86,6 +94,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
     }
     public void shorlistCandidates(String JOBID){
         ref.addValueEventListener(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String p1=snapshot.child("Job").child(JOBID).child("Priority1").getValue().toString();
@@ -99,7 +108,11 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                 if(p2.equals("Awards/Honors")) p2="Awards Honors";
                 if(p3.equals("Awards/Honors")) p3="Awards Honors";
 
-                calculate(snapshot, p2, JOBID);
+                try {
+                    calculate(snapshot, p1, JOBID);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
 
             }
 
@@ -109,9 +122,11 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
             }
         });
     }
-    public void calculate(DataSnapshot snapshot,String p,String JOBID){
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void calculate(DataSnapshot snapshot, String p, String JOBID) throws ParseException {
         //Toast.makeText(this, "Ulla Vanchu"+snapshot.child("Job").child(JOBID).child("jobID").getValue().toString(), Toast.LENGTH_SHORT).show();
         ArrayList<Integer> p1Marks=new ArrayList<>();
+        ArrayList<Integer> p2Marks=new ArrayList<>();
         if(p.equals("Education")){
             for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
                 if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID)){
@@ -144,15 +159,34 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
         //-------------------------------------------------------
 
-        if(p.equals("Work Experience")){
+        else if(p.equals("Work Experience")){
+            ArrayList<Long> WorkExDays=new ArrayList<>();
+            long maxWorkEx=Integer.MIN_VALUE;
             for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
                 if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID)){
+                    int count=0;
+                    long totalWorkEx=0;
                     for(DataSnapshot workExKey : dataSnapshot.child("Work Experience").getChildren()){
-
+                        String from = workExKey.child("FromDate").getValue().toString().substring(0,10).replaceAll("/","-");
+                        //26-03-2023
+                        from=from.substring(6,10)+"-"+from.substring(3,5)+"-"+from.substring(0,2);
+                        String to=workExKey.child("ToDate").getValue().toString().substring(0,10).replaceAll("/","-");
+                        to=to.substring(6,10)+"-"+to.substring(3,5)+"-"+to.substring(0,2);
+                        long daysBetween = ChronoUnit.MONTHS.between(LocalDate.parse(from),LocalDate.parse(to));
+                        totalWorkEx+=daysBetween;
                     }
-
+                    //Toast.makeText(this, "totalWorkEx :"+totalWorkEx, Toast.LENGTH_SHORT).show();
+                    WorkExDays.add(totalWorkEx);
+                    if(totalWorkEx>maxWorkEx){
+                        maxWorkEx=totalWorkEx;
+                    }
                 }
             }
+            for(int i=0;i<WorkExDays.size();i++){
+                p2Marks.add((int)(((float)WorkExDays.get(i)/(float)maxWorkEx)*100));
+                //Toast.makeText(this, String.valueOf(p2Marks.get(i)), Toast.LENGTH_SHORT).show();
+            }
+
         }
 
 
