@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniHire">
         <activity
+            android:name=".shortlistCandidatesClosedJobs"
+            android:exported="false" />
+        <activity
+            android:name=".SeeApplicantsClosed"
+            android:exported="false" />
+        <activity
             android:name=".ViewClosedJobs"
             android:exported="false" />
         <activity
