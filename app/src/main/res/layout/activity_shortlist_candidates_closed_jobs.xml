@@ -6,21 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".shortlistCandidatesClosedJobs">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
+
+    <RadioGroup
+        android:id="@+id/radioGroupShorlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text=".xlsx"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="212dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
-        app:layout_constraintStart_toEndOf="@+id/radioButton"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView52"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxResumeShorlist"
+        app:layout_constraintVertical_bias="0.892">
+
+        <RadioButton
+            android:id="@+id/xlsxDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text=".xlsx"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintStart_toEndOf="@+id/csvDownload"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxResumeShorlist"
+            app:layout_constraintVertical_bias="0.201" />
+
+        <RadioButton
+            android:id="@+id/csvDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:text=".csv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView52"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxResumeShorlist"
+            app:layout_constraintVertical_bias="0.2" />
+    </RadioGroup>
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/checkBoxResumeShorlist"
         android:layout_width="87dp"
         android:layout_height="34dp"
         android:text="Resume URL"
@@ -28,11 +54,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toEndOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPhoneShorlist"
         app:layout_constraintVertical_bias="0.046" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/checkBoxLocationShorlist"
         android:layout_width="92dp"
         android:layout_height="30dp"
         android:layout_marginTop="48dp"
@@ -40,12 +66,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.241"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxPhoneShorlist"
         app:layout_constraintTop_toBottomOf="@+id/textView49"
         app:layout_constraintVertical_bias="0.174" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/checkBoxPhoneShorlist"
         android:layout_width="95dp"
         android:layout_height="42dp"
         android:text="Phone Number"
@@ -53,11 +79,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toEndOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxNameShorlist"
         app:layout_constraintVertical_bias="0.043" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkBoxEmailShorlist"
         android:layout_width="79dp"
         android:layout_height="29dp"
         android:layout_marginTop="48dp"
@@ -65,7 +91,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.287"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxNameShorlist"
         app:layout_constraintTop_toBottomOf="@+id/textView49"
         app:layout_constraintVertical_bias="0.049" />
 
@@ -87,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fields Required :"
-        android:textSize="16sp "
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
@@ -96,7 +122,7 @@
         app:layout_constraintVertical_bias="0.14" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxNameShorlist"
         android:layout_width="79dp"
         android:layout_height="29dp"
         android:layout_marginTop="48dp"
@@ -109,27 +135,18 @@
         app:layout_constraintVertical_bias="0.051" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/NumOfCand"
         android:layout_width="167dp"
         android:layout_height="48dp"
         android:layout_marginBottom="56dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        android:inputType="number|textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxNameShorlist"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
         app:layout_constraintStart_toEndOf="@+id/textView49" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text=".csv"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView52"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-        app:layout_constraintVertical_bias="0.202" />
+
 
     <TextView
         android:id="@+id/textView52"
@@ -155,5 +172,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/shortlistBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupShorlist" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
