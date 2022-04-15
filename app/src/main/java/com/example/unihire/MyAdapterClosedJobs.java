@@ -1,6 +1,7 @@
 package com.example.unihire;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,15 @@ public class MyAdapterClosedJobs extends RecyclerView.Adapter<MyAdapterClosedJob
 
             this.context = context;
 
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String jobID=list.get(getAdapterPosition()).jobID;
+                    Intent intent=new Intent(context, SeeApplicantsClosed.class);
+                    intent.putExtra("JOBID", jobID);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
