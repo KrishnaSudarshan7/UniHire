@@ -60,7 +60,7 @@ public class SeeApplicantsClosed extends AppCompatActivity {
                         String app_id= (String) dataSnapshot.child("ApplicantID").getValue();
                         String name=snapshot.child("Applicant").child(app_id).child("Name").getValue().toString();
                         String email=snapshot.child("Applicant").child(app_id).child("Email").getValue().toString();
-                        Toast.makeText(SeeApplicantsClosed.this, name+" "+email, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(SeeApplicantsClosed.this, name+" "+email, Toast.LENGTH_SHORT).show();
                         Applicant app=new Applicant(name,email);
                         list.add(app);
                         myAdapterApplicants.notifyDataSetChanged();
