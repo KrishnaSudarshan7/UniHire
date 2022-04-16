@@ -109,7 +109,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                 if(p3.equals("Awards/Honors")) p3="Awards Honors";
 
                 try {
-                    calculate(snapshot, p3, JOBID);
+                    calculate(snapshot, "Awards Honors", JOBID);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -228,6 +228,29 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
         //------------------------------------------------------------------------------------------------------
 
+        else if(p.equals("Awards Honors")){
+            int maxCount=Integer.MIN_VALUE;
+            ArrayList<Integer> marksAll=new ArrayList<>();
+            for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
+                if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID)){
+                    int count=0;
+                    for(DataSnapshot awardHonorKey : dataSnapshot.child("Awards Honors").getChildren()){
+                        count++;
+                    }
+                    marksAll.add(count);
+                    if(count>maxCount)
+                        maxCount=count;
+                }
+            }
+            for(int i=0;i<marksAll.size();i++){
+                float a=(float) marksAll.get(i)/(float) maxCount;
+                p4Marks.add((int)(a*100));
+                //Toast.makeText(this, String.valueOf(p4Marks.get(i)), Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+        //-------------------------------------------------------------------------------------------------------
 
     }
 
