@@ -109,7 +109,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                 if(p3.equals("Awards/Honors")) p3="Awards Honors";
 
                 try {
-                    calculate(snapshot, p1, JOBID);
+                    calculate(snapshot, p3, JOBID);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -127,6 +127,9 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
         //Toast.makeText(this, "Ulla Vanchu"+snapshot.child("Job").child(JOBID).child("jobID").getValue().toString(), Toast.LENGTH_SHORT).show();
         ArrayList<Integer> p1Marks=new ArrayList<>();
         ArrayList<Integer> p2Marks=new ArrayList<>();
+        ArrayList<Integer> p3Marks=new ArrayList<>();
+        ArrayList<Integer> p4Marks=new ArrayList<>();
+        ArrayList<Integer> p5Marks=new ArrayList<>();
         if(p.equals("Education")){
             for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
                 if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID)){
@@ -188,6 +191,42 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
             }
 
         }
+
+        //-----------------------------------------------------------------------------------
+
+        else if(p.equals("Publication")){
+            ArrayList <Integer> markList=new ArrayList<>();
+            int maxMark=Integer.MIN_VALUE;
+            for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
+                if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID)){
+                    int paperCount=0;
+                    int totalCitations=0;
+                    for(DataSnapshot publicationKey : dataSnapshot.child("Publication").getChildren()){
+                        int citation=Integer.parseInt(publicationKey.child("Citations").getValue().toString());
+                        //Toast.makeText(this, String.valueOf(citation), Toast.LENGTH_SHORT).show();
+                        //String si=publicationKey.child("ScopusIndex").getValue().toString();
+                        paperCount++;
+                        totalCitations+=citation;
+                        //if(!si.equals("NA")){
+                            paperCount++;
+                            totalCitations+=citation;
+                        //}
+                    }
+                    int mark=totalCitations+(paperCount*10);
+                    if(mark>maxMark)
+                        maxMark=mark;
+                    markList.add(mark);
+                }
+            }
+            for(int i=0;i<markList.size();i++){
+                float a=(float) markList.get(i) / (float) maxMark;
+                p3Marks.add((int)(a*100));
+                Toast.makeText(this, String.valueOf(p3Marks.get(i)), Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+        //------------------------------------------------------------------------------------------------------
 
 
     }
