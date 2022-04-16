@@ -3,9 +3,14 @@ package com.example.unihire;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
@@ -22,13 +27,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
@@ -36,7 +53,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
     CheckBox Name,Email,PhoneNum,Location,ResumeURL;
     String SelectedFormat;
     int numberOfCandidates;
-    boolean nameChecked,emailChecked,phoneNumChecked,locationChecked,resumeURLChecked;
+    boolean nameChecked,emailChecked,phoneNumChecked,resumeURLChecked;
     RadioButton csv,xlsx;
     RadioGroup rg;
     Button shorlist;
@@ -45,17 +62,24 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+        }
         setContentView(R.layout.activity_shortlist_candidates_closed_jobs);
         String JOBID = getIntent().getStringExtra("JOBID");
 
         ref=FirebaseDatabase.getInstance().getReference();
         fAuth=FirebaseAuth.getInstance();
 
-        NumOfCandidatesEditText=findViewById(R.id.NumOfCand);
+        NumOfCandidatesEditText=(EditText) findViewById(R.id.NumOfCand);
         Name=findViewById(R.id.checkBoxNameShorlist);
         Email=findViewById(R.id.checkBoxEmailShorlist);
         PhoneNum=findViewById(R.id.checkBoxPhoneShorlist);
-        Location=findViewById(R.id.checkBoxLocationShorlist);
         ResumeURL=findViewById(R.id.checkBoxResumeShorlist);
         rg=findViewById(R.id.radioGroupShorlist);
         shorlist=findViewById(R.id.shortlistBtn);
@@ -65,7 +89,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SelectedFormat= (String) csv.getText();
-                Toast.makeText(shortlistCandidatesClosedJobs.this, SelectedFormat, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(shortlistCandidatesClosedJobs.this, SelectedFormat, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -73,27 +97,30 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SelectedFormat=(String) xlsx.getText();
-                Toast.makeText(shortlistCandidatesClosedJobs.this, SelectedFormat, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(shortlistCandidatesClosedJobs.this, SelectedFormat, Toast.LENGTH_SHORT).show();
             }
         });
 
         shorlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //ActivityCompat.requestPermissions(shortlistCandidatesClosedJobs.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
                 numberOfCandidates=Integer.parseInt(NumOfCandidatesEditText.getText().toString());
                 nameChecked=Name.isChecked();
                 emailChecked=Email.isChecked();
                 phoneNumChecked=PhoneNum.isChecked();
-                locationChecked=Location.isChecked();
                 resumeURLChecked=ResumeURL.isChecked();
-                shorlistCandidates(JOBID);
+                shorlistCandidates(JOBID,numberOfCandidates,nameChecked,emailChecked,phoneNumChecked,resumeURLChecked,SelectedFormat);
             }
         });
 
 
     }
-    public void shorlistCandidates(String JOBID){
-        ref.addValueEventListener(new ValueEventListener() {
+    public void shorlistCandidates(String JOBID,int numberOfCandidates,boolean nameChecked,boolean emailChecked, boolean phoneNumChecked, boolean resumeURLChecked,String SelectedFormat)  {
+
+
+        ArrayList<String> sortedShortList=new ArrayList<>();
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -107,6 +134,14 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                 if(p1.equals("Awards/Honors")) p1="Awards Honors";
                 if(p2.equals("Awards/Honors")) p2="Awards Honors";
                 if(p3.equals("Awards/Honors")) p3="Awards Honors";
+                HashMap<Integer,String> hmID=new HashMap<Integer,String>();
+                int hmCount=1;
+                for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
+                    hmID.put(hmCount,dataSnapshot.child("ApplicantID").getValue().toString());
+                    //Toast.makeText(shortlistCandidatesClosedJobs.this, hmID.get(hmCount), Toast.LENGTH_SHORT).show();
+                    hmCount++;
+                }
+
 
                 try {
                     ArrayList<Integer> p1Marks = calculate(snapshot, p1, JOBID);
@@ -120,16 +155,149 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                         int p3m=p3Marks.get(i);
                         float finalmark = (float) ((float)(p1m*w1)/100 + (float)(p2m*w2)/100 + (float)(p3m*w3)/100 );
                         finalMarksOutta100.add(finalmark);
-                        Toast.makeText(shortlistCandidatesClosedJobs.this, String.valueOf(finalmark), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(shortlistCandidatesClosedJobs.this, String.valueOf(finalmark), Toast.LENGTH_SHORT).show();
+                    }
 
+                    float arr[][]=new float[n][2];
+                    for(int i=0;i<n;i++){
+                        arr[i][0]=finalMarksOutta100.get(i);
+                        arr[i][1]=i+1;
+                    }
+                    Arrays.sort(arr,(a,b)->(int)(-a[0]+b[0]));
+
+                    for(int i=0;i<n;i++){
+                        String appid=hmID.get((int)arr[i][1]);
+                        sortedShortList.add(appid);
+                    }
+
+                    for(int i=0;i<numberOfCandidates;i++)
+                        Toast.makeText(shortlistCandidatesClosedJobs.this, sortedShortList.get(i), Toast.LENGTH_SHORT).show();
+
+                    //----------------------------------------------------------
+                    //String JOBID,
+                    // int numberOfCandidates,boolean nameChecked,boolean emailChecked,
+                    // boolean phoneNumChecked, boolean locationChecked,boolean resumeURLChecked,
+                    // String SelectedFormat
+                     int columns=0;
+                     ArrayList<String>columnsName=new ArrayList<>();
+                    if(nameChecked){
+                        columns++;
+                        columnsName.add("Name");
+                    }
+                     if(emailChecked){
+                        columns++;
+                        columnsName.add("Email");
+                     }
+                     if(phoneNumChecked){
+                         columns++;
+                         columnsName.add("PhoneNum");
+                     }
+                     if(resumeURLChecked){
+                        columns++;
+                        columnsName.add("ResumeURL");
+                     }
+                     String table[][]=new String[numberOfCandidates][columns];
+
+                    int curcol=0;
+
+                    if(nameChecked){
+                        for(int i=0;i<numberOfCandidates;i++){
+                            String applicantID=sortedShortList.get(i);
+                            table[i][curcol]=snapshot.child("Applicant").child(applicantID).child("Name").getValue().toString();
+                        }
+                        curcol++;
+                    }
+                    if(emailChecked){
+                        for(int i=0;i<numberOfCandidates;i++){
+                            String applicantID=sortedShortList.get(i);
+                            table[i][curcol]=snapshot.child("Applicant").child(applicantID).child("Email").getValue().toString();
+                        }
+                        curcol++;
+                    }
+                    if(phoneNumChecked){
+                        for(int i=0;i<numberOfCandidates;i++){
+                            String applicantID=sortedShortList.get(i);
+                            table[i][curcol]=snapshot.child("Applicant").child(applicantID).child("PhoneNum").getValue().toString();
+                        }
+                        curcol++;
+                    }
+                    if(resumeURLChecked){
+                        for(int i=0;i<numberOfCandidates;i++){
+                            String applicantID=sortedShortList.get(i);
+                            //You have JOBID, Applicant ID find ResumeURL
+                            String applicationID=applicantID+JOBID;
+                            table[i][curcol]=snapshot.child("Application").child(applicationID).child("ResumeURL").getValue().toString();
+                        }
+                        curcol++;
+                    }
+
+
+                    //---------------------------------------------------------
+
+
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                    Date date = new Date();
+                    String date123=date.toString().substring(0,10).replaceAll("/","-");
+                    File filepath=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+"/Shortlisted Candidates "+date123+SelectedFormat);
+                    HSSFWorkbook hssfWorkbook=new HSSFWorkbook();
+                    HSSFSheet hssfSheet=hssfWorkbook.createSheet("CustomSheet");
+                    HSSFRow hssfRow=hssfSheet.createRow(0);
+                    int tempcol=0;
+                    if(nameChecked){
+                        HSSFCell cell=hssfRow.createCell(tempcol);
+                        cell.setCellValue("Name");
+                        tempcol++;
+                    }
+                    if(emailChecked){
+                        HSSFCell cell=hssfRow.createCell(tempcol);
+                        cell.setCellValue("Email");
+                        tempcol++;
+                    }
+                    if(phoneNumChecked){
+                        HSSFCell cell=hssfRow.createCell(tempcol);
+                        cell.setCellValue("Phone Number");
+                        tempcol++;
+                    }
+                    if(resumeURLChecked){
+                        HSSFCell cell=hssfRow.createCell(tempcol);
+                        cell.setCellValue("Resume Link");
+                        tempcol++;
+                    }
+
+                    for(int i=0;i<numberOfCandidates;i++){
+                        HSSFRow row=hssfSheet.createRow(i+1);
+                        for(int j=0;j<columns;j++){
+                            HSSFCell cell=row.createCell(j);
+                            cell.setCellValue(table[i][j]);
+                        }
+                    }
+                    try {
+                        if(!filepath.exists()){
+                            filepath.createNewFile();
+                        }
+                        Toast.makeText(shortlistCandidatesClosedJobs.this, "Downloaded "+SelectedFormat+" File, Check your downloads", Toast.LENGTH_SHORT).show();
+
+                        FileOutputStream fileOutputStream=new FileOutputStream(filepath);
+                        hssfWorkbook.write(fileOutputStream);
+                        if(fileOutputStream!=null){
+                            fileOutputStream.flush();
+                            fileOutputStream.close();
+                        }
+
+                    }
+                    catch (IOException e) {
+                        Toast.makeText(shortlistCandidatesClosedJobs.this, e.toString(), Toast.LENGTH_SHORT).show();
+
+                        e.printStackTrace();
                     }
 
 
 
-
-
                 } catch (ParseException e) {
+                    Toast.makeText(shortlistCandidatesClosedJobs.this, "Catch2", Toast.LENGTH_SHORT).show();
+
                     e.printStackTrace();
+
                 }
 
             }
@@ -139,6 +307,8 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
             }
         });
+
+
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     public ArrayList<Integer> calculate(DataSnapshot snapshot, String p, String JOBID) throws ParseException {

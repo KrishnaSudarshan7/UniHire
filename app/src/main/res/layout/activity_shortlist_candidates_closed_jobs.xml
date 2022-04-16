@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:text=".xlsx"
+            android:text=".xls"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.019"
@@ -52,23 +52,10 @@
         android:text="Resume URL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toEndOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxPhoneShorlist"
-        app:layout_constraintVertical_bias="0.046" />
-
-    <CheckBox
-        android:id="@+id/checkBoxLocationShorlist"
-        android:layout_width="92dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="48dp"
-        android:text="Location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toEndOf="@+id/checkBoxPhoneShorlist"
-        app:layout_constraintTop_toBottomOf="@+id/textView49"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEmailShorlist"
+        app:layout_constraintVertical_bias="0.063" />
 
     <CheckBox
         android:id="@+id/checkBoxPhoneShorlist"
@@ -134,19 +121,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textView49"
         app:layout_constraintVertical_bias="0.051" />
 
+
     <EditText
         android:id="@+id/NumOfCand"
         android:layout_width="167dp"
         android:layout_height="48dp"
         android:layout_marginBottom="56dp"
         android:ems="10"
-        android:inputType="number|textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/checkBoxNameShorlist"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toEndOf="@+id/textView49" />
-
-
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toEndOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/textView53"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView52"
