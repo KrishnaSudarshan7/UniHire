@@ -109,7 +109,25 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                 if(p3.equals("Awards/Honors")) p3="Awards Honors";
 
                 try {
-                    calculate(snapshot, "Awards Honors", JOBID);
+                    ArrayList<Integer> p1Marks = calculate(snapshot, p1, JOBID);
+                    ArrayList<Integer> p2Marks= calculate(snapshot, p2, JOBID);
+                    ArrayList<Integer> p3Marks= calculate(snapshot, p3, JOBID);
+                    ArrayList<Float> finalMarksOutta100 = new ArrayList<>();
+                    int n=p1Marks.size();
+                    for(int i=0;i<n;i++){//Iterate through each persons mark for a field
+                        int p1m=p1Marks.get(i);
+                        int p2m=p2Marks.get(i);
+                        int p3m=p3Marks.get(i);
+                        float finalmark = (float) ((float)(p1m*w1)/100 + (float)(p2m*w2)/100 + (float)(p3m*w3)/100 );
+                        finalMarksOutta100.add(finalmark);
+                        Toast.makeText(shortlistCandidatesClosedJobs.this, String.valueOf(finalmark), Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+
+
+
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -123,13 +141,9 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
         });
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void calculate(DataSnapshot snapshot, String p, String JOBID) throws ParseException {
+    public ArrayList<Integer> calculate(DataSnapshot snapshot, String p, String JOBID) throws ParseException {
         //Toast.makeText(this, "Ulla Vanchu"+snapshot.child("Job").child(JOBID).child("jobID").getValue().toString(), Toast.LENGTH_SHORT).show();
-        ArrayList<Integer> p1Marks=new ArrayList<>();
-        ArrayList<Integer> p2Marks=new ArrayList<>();
-        ArrayList<Integer> p3Marks=new ArrayList<>();
-        ArrayList<Integer> p4Marks=new ArrayList<>();
-        ArrayList<Integer> p5Marks=new ArrayList<>();
+        ArrayList<Integer> pMarks=new ArrayList<>();
         if(p.equals("Education")){
             for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
                 if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID)){
@@ -154,8 +168,8 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                             recentMarks+=allMarks.get(i);
                     }
                     score=(recentMarks/2) + ((restOfMarks/(allMarks.size()-1)))/2;
-                    Toast.makeText(this, "score : "+String.valueOf(score) , Toast.LENGTH_SHORT).show();
-                    p1Marks.add(score);
+                    //Toast.makeText(this, "score : "+String.valueOf(score) , Toast.LENGTH_SHORT).show();
+                    pMarks.add(score);
                 }
             }
         }
@@ -186,7 +200,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                 }
             }
             for(int i=0;i<WorkExDays.size();i++){
-                p2Marks.add((int)(((float)WorkExDays.get(i)/(float)maxWorkEx)*100));
+                pMarks.add((int)(((float)WorkExDays.get(i)/(float)maxWorkEx)*100));
                 //Toast.makeText(this, String.valueOf(p2Marks.get(i)), Toast.LENGTH_SHORT).show();
             }
 
@@ -220,8 +234,8 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
             }
             for(int i=0;i<markList.size();i++){
                 float a=(float) markList.get(i) / (float) maxMark;
-                p3Marks.add((int)(a*100));
-                Toast.makeText(this, String.valueOf(p3Marks.get(i)), Toast.LENGTH_SHORT).show();
+                pMarks.add((int)(a*100));
+                //Toast.makeText(this, String.valueOf(pMarks.get(i)), Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -244,14 +258,40 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
             }
             for(int i=0;i<marksAll.size();i++){
                 float a=(float) marksAll.get(i)/(float) maxCount;
-                p4Marks.add((int)(a*100));
-                //Toast.makeText(this, String.valueOf(p4Marks.get(i)), Toast.LENGTH_SHORT).show();
+                pMarks.add((int)(a*100));
+                //Toast.makeText(this, String.valueOf(pMarks.get(i)), Toast.LENGTH_SHORT).show();
             }
 
         }
 
         //-------------------------------------------------------------------------------------------------------
 
+        else if(p.equals("Research Grants")){
+            ArrayList<Integer> rgMarks=new ArrayList<>();
+            int maxMoney=Integer.MIN_VALUE;
+            for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()) {
+                if (dataSnapshot.child("JobID").getValue().toString().equals(JOBID)) {
+                    int totalMoney=0;
+                    for(DataSnapshot rgKey : dataSnapshot.child("Research Grants").getChildren()){
+                        int ThisRGMoney=Integer.parseInt(rgKey.child("Amount").getValue().toString());
+                        totalMoney+=ThisRGMoney;
+                    }
+                    rgMarks.add(totalMoney);
+                    if(totalMoney>maxMoney)
+                        maxMoney=totalMoney;
+                    //Toast.makeText(this, String.valueOf(totalMoney), Toast.LENGTH_SHORT).show();
+                }
+            }
+            for(int i=0;i<rgMarks.size();i++){
+                float a= (float) rgMarks.get(i) / (float) maxMoney;
+                pMarks.add((int)(a*100));
+                //Toast.makeText(this, String.valueOf(pMarks.get(i)), Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        //----------------------------------------------------------------------------------------------------
+
+        return pMarks;
     }
 
 }
