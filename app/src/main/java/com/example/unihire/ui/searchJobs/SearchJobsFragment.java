@@ -6,20 +6,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.unihire.DraftJobsList;
+import com.example.unihire.FilterInput;
 import com.example.unihire.Job;
 import com.example.unihire.MyAdapterAllJobs;
-import com.example.unihire.MyAdapterDraft;
-import com.example.unihire.PostJobForm;
 import com.example.unihire.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -90,17 +85,13 @@ public class SearchJobsFragment extends Fragment {
             }
         });
 
-
-
-
-//        searchBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getActivity(), .class);
-//                startActivity(intent);
-//            }
-//        });
-
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FilterInput.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

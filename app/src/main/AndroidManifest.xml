@@ -15,6 +15,12 @@
         android:theme="@style/Theme.UniHire"
         android:requestLegacyExternalStorage="true">
         <activity
+            android:name=".FilterInput"
+            android:exported="false" />
+        <activity
+            android:name=".MultiSearch"
+            android:exported="false" />
+        <activity
             android:name=".shortlistCandidatesClosedJobs"
             android:exported="false" />
         <activity
