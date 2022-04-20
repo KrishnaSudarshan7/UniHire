@@ -18,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -51,7 +52,8 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
     EditText NumOfCandidatesEditText;
     CheckBox Name,Email,PhoneNum,Location,ResumeURL;
-    String SelectedFormat;
+    TextView totalApplications;
+    String SelectedFormat="";
     int numberOfCandidates;
     boolean nameChecked,emailChecked,phoneNumChecked,resumeURLChecked;
     RadioButton csv,xlsx;
@@ -76,6 +78,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
         ref=FirebaseDatabase.getInstance().getReference();
         fAuth=FirebaseAuth.getInstance();
 
+        totalApplications=findViewById(R.id.totalAppText);
         NumOfCandidatesEditText=(EditText) findViewById(R.id.NumOfCand);
         Name=findViewById(R.id.checkBoxNameShorlist);
         Email=findViewById(R.id.checkBoxEmailShorlist);
@@ -100,17 +103,61 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                 //Toast.makeText(shortlistCandidatesClosedJobs.this, SelectedFormat, Toast.LENGTH_SHORT).show();
             }
         });
+        final int[] totalApplicants = {0};
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
+                    if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID)){
+                        totalApplicants[0]++;
+                    }
+                }
+                totalApplications.setText(String.valueOf(totalApplicants[0]));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         shorlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //ActivityCompat.requestPermissions(shortlistCandidatesClosedJobs.this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
+                final boolean[] goodToGo = {true};
                 numberOfCandidates=Integer.parseInt(NumOfCandidatesEditText.getText().toString());
                 nameChecked=Name.isChecked();
                 emailChecked=Email.isChecked();
                 phoneNumChecked=PhoneNum.isChecked();
                 resumeURLChecked=ResumeURL.isChecked();
-                shorlistCandidates(JOBID,numberOfCandidates,nameChecked,emailChecked,phoneNumChecked,resumeURLChecked,SelectedFormat);
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(numberOfCandidates> totalApplicants[0]){
+                            goodToGo[0] =false;
+                            Toast.makeText(shortlistCandidatesClosedJobs.this, "You dont have that many Applicants", Toast.LENGTH_SHORT).show();
+                        }
+                        if(resumeURLChecked==true){
+                            if(snapshot.child("Job").child(JOBID).child("ResumeInput").getValue().toString().equals("false")){
+                                Toast.makeText(shortlistCandidatesClosedJobs.this, "You cant select resume URL. The Job posting doesnt ask that to applicants", Toast.LENGTH_SHORT).show();
+                                goodToGo[0]=false;
+                            }
+                        }
+                        if(SelectedFormat.equals("")){
+                            Toast.makeText(shortlistCandidatesClosedJobs.this, "You need to select either of these formats", Toast.LENGTH_SHORT).show();
+                            goodToGo[0] = true;
+                        }
+                        if(goodToGo[0] == true)
+                            shorlistCandidates(JOBID,numberOfCandidates,nameChecked,emailChecked,phoneNumChecked,resumeURLChecked,SelectedFormat);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
 
@@ -170,8 +217,8 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
                         sortedShortList.add(appid);
                     }
 
-                    for(int i=0;i<numberOfCandidates;i++)
-                        Toast.makeText(shortlistCandidatesClosedJobs.this, sortedShortList.get(i), Toast.LENGTH_SHORT).show();
+                    //for(int i=0;i<numberOfCandidates;i++)
+                        //Toast.makeText(shortlistCandidatesClosedJobs.this, sortedShortList.get(i), Toast.LENGTH_SHORT).show();
 
                     //----------------------------------------------------------
                     //String JOBID,

@@ -16,15 +16,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.023"
+        android:background="@drawable/custom_button"
+        android:padding="30px"
+        android:textColor="@color/white"
+        />
 
     <TextView
         android:id="@+id/textView48"
-        android:layout_width="248dp"
-        android:layout_height="22dp"
+        android:layout_width="259dp"
+        android:layout_height="29dp"
         android:text="List of Applicants"
         android:textAlignment="center"
-        android:textSize="16sp"
+        android:textColor="#AD0BC8"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
