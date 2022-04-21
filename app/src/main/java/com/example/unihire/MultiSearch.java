@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -37,12 +38,15 @@ public class MultiSearch extends AppCompatActivity {
         setContentView(R.layout.activity_multi_search);
 
         Intent intent=getIntent();
-        String text_title= intent.getStringExtra(FilterInput.EXTRA_TITLE);
-        String text_dept= intent.getStringExtra(FilterInput.EXTRA_DEPT);
-        String text_specialization= intent.getStringExtra(FilterInput.EXTRA_SPECIALIZATION);
-        String text_univname = intent.getStringExtra(FilterInput.EXTRA_UNIVNAME);
 
-        String uId=FirebaseAuth.getInstance().getUid();
+        Boolean isEmptytitle = intent.getBooleanExtra(FilterInput.EXTRA_TITLE, false);
+        Boolean isEmptydept = intent.getBooleanExtra(FilterInput.EXTRA_DEPT, false);
+        Boolean isEmptyspec = intent.getBooleanExtra(FilterInput.EXTRA_SPECIALIZATION, false);
+        Boolean isEmptyunivname = intent.getBooleanExtra(FilterInput.EXTRA_UNIVNAME, false);
+        String text_title = intent.getStringExtra(FilterInput.EXTRA_TITLE);
+        String text_dept = intent.getStringExtra(FilterInput.EXTRA_DEPT);
+        String text_specialization = intent.getStringExtra(FilterInput.EXTRA_SPECIALIZATION);
+        String text_univname = intent.getStringExtra(FilterInput.EXTRA_UNIVNAME);
 
         recyclerView=findViewById(R.id.recycler_multi_search);
         ref= FirebaseDatabase.getInstance().getReference();
@@ -60,12 +64,49 @@ public class MultiSearch extends AppCompatActivity {
                     String univIDStr= job.UnivId;
                     String uname= snapshot.child("University").child(univIDStr).child("univName").getValue().toString();
                     if(job.jobStatus.equals("active")) {
-                        if(job.JobTitle.toLowerCase().contains(text_title.toLowerCase().trim()) && job.Department.toLowerCase().contains(text_dept.toLowerCase().trim()) &&
-                         job.Specialization.toLowerCase().contains(text_specialization.toLowerCase().trim())&& uname.toLowerCase().contains(text_univname.toLowerCase().trim())){
-                            list.add(job);
+                        if(!isEmptytitle && !isEmptydept && !isEmptyspec && !isEmptyunivname) {
+                            if (job.JobTitle.toLowerCase().contains(text_title.toLowerCase().trim()) && job.Department.toLowerCase().contains(text_dept.toLowerCase().trim()) &&
+                                    job.Specialization.toLowerCase().contains(text_specialization.toLowerCase().trim()) && uname.toLowerCase().contains(text_univname.toLowerCase().trim())) {
+                                list.add(job);
+                            }
+                            else
+                                continue;
+                        }
+                        else if(!isEmptytitle && !isEmptydept && !isEmptyspec && isEmptyunivname==false) {
+                            if (job.JobTitle.toLowerCase().contains(text_title.toLowerCase().trim()) && job.Department.toLowerCase().contains(text_dept.toLowerCase().trim()) &&
+                                    job.Specialization.toLowerCase().contains(text_specialization.toLowerCase().trim())) {
+                                list.add(job);
+                            }
+                            else
+                                continue;
+                        }
+                        else if(!isEmptytitle && !isEmptydept && isEmptyspec==false && !isEmptyunivname) {
+                            if (job.JobTitle.toLowerCase().contains(text_title.toLowerCase().trim()) && job.Department.toLowerCase().contains(text_dept.toLowerCase().trim()) &&
+                                      uname.toLowerCase().contains(text_univname.toLowerCase().trim())) {
+                                list.add(job);
+                            }
+                            else
+                                continue;
+                        }
+                        else if(!isEmptytitle && isEmptydept==false && !isEmptyspec && !isEmptyunivname) {
+                            if (job.JobTitle.toLowerCase().contains(text_title.toLowerCase().trim())  &&
+                                    job.Specialization.toLowerCase().contains(text_specialization.toLowerCase().trim()) && uname.toLowerCase().contains(text_univname.toLowerCase().trim())) {
+                                list.add(job);
+                            }
+                            else
+                                continue;
+                        }
+                        else if(isEmptytitle==false && !isEmptydept && !isEmptyspec && !isEmptyunivname) {
+                            if (job.Department.toLowerCase().contains(text_dept.toLowerCase().trim()) &&
+                                    job.Specialization.toLowerCase().contains(text_specialization.toLowerCase().trim()) && uname.toLowerCase().contains(text_univname.toLowerCase().trim())) {
+                                list.add(job);
+                            }
+                            else
+                                continue;
                         }
                         else
-                            continue;
+                            Toast.makeText(MultiSearch.this, "Please enter atleast one search filter", Toast.LENGTH_SHORT).show();
+
                     }
                 }
                 Collections.sort(list, new Comparator<Job>() {
