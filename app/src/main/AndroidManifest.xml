@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniHire">
         <activity
+            android:name=".ViewApplicantDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ApplyJobFormPage"
+            android:exported="false" />
+        <activity
             android:name=".ViewJobInfoPage"
             android:exported="false" />
         <activity

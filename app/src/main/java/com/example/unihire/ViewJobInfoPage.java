@@ -3,7 +3,9 @@ package com.example.unihire;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -49,6 +51,15 @@ public class ViewJobInfoPage extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        applyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ViewJobInfoPage.this, ApplyJobFormPage.class);
+                intent.putExtra("JOBID", JOBID);
+                startActivity(intent);
             }
         });
 
