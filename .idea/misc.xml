@@ -13,6 +13,7 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_home_page.xml" value="0.2526041666666667" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_login.xml" value="0.2" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_applicant_registration.xml" value="0.264" />
+        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_apply_job_form_page.xml" value="0.23697916666666666" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_draft_jobs_list.xml" value="0.1" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_edit_profile_rec.xml" value="0.264" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_forgot_password.xml" value="0.28351449275362317" />
@@ -31,6 +32,7 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_view_applicant_profile.xml" value="0.536" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_view_closed_jobs.xml" value="0.23697916666666666" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_view_job_info_page.xml" value="0.264" />
+        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_view_university_details.xml" value="0.4" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/applicant_card.xml" value="0.264" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/content_post_job_form.xml" value="0.23697916666666666" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/draft_item.xml" value="0.19427083333333334" />

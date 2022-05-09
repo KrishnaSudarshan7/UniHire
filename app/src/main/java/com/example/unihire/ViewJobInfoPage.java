@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.unihire.ui.ViewUniversityDetails;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +23,7 @@ public class ViewJobInfoPage extends AppCompatActivity {
     TextView jobTitle,UnivName,Dept,Spec,jd;
     FirebaseAuth fAuth;
     DatabaseReference reff;
+    String UnivId="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,14 +36,13 @@ public class ViewJobInfoPage extends AppCompatActivity {
         Dept=findViewById(R.id.deptDisp);
         Spec=findViewById(R.id.specDisp);
         jd=findViewById(R.id.jdTextBox);
-
         fAuth=FirebaseAuth.getInstance();
         reff= FirebaseDatabase.getInstance().getReference();
         reff.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 jobTitle.setText(snapshot.child("Job").child(JOBID).child("JobTitle").getValue().toString());
-                String UnivId= snapshot.child("Job").child(JOBID).child("UnivId").getValue().toString();
+                UnivId= snapshot.child("Job").child(JOBID).child("UnivId").getValue().toString();
                 UnivName.setText(snapshot.child("University").child(UnivId).child("univName").getValue().toString());
                 Dept.setText(snapshot.child("Job").child(JOBID).child("Department").getValue().toString());
                 Spec.setText(snapshot.child("Job").child(JOBID).child("Specialization").getValue().toString());
@@ -59,6 +60,14 @@ public class ViewJobInfoPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(ViewJobInfoPage.this, ApplyJobFormPage.class);
                 intent.putExtra("JOBID", JOBID);
+                startActivity(intent);
+            }
+        });
+        UnivName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ViewJobInfoPage.this, ViewUniversityDetails.class);
+                intent.putExtra("UNIVID", UnivId);
                 startActivity(intent);
             }
         });
