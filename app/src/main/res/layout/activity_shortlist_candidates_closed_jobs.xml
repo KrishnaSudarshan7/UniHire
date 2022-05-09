@@ -6,75 +6,122 @@
     android:layout_height="match_parent"
     tools:context=".shortlistCandidatesClosedJobs">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
+
+    <TextView
+        android:id="@+id/textView55"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text=".xlsx"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Total Applications: "
+        android:textColor="#AD0BC8"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView50"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
-        app:layout_constraintStart_toEndOf="@+id/radioButton"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintHorizontal_bias="0.335"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView49"
+        app:layout_constraintVertical_bias="0.536" />
+
+    <TextView
+        android:id="@+id/totalAppText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textColor="#AD0BC8"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxNameShorlist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toEndOf="@+id/textView55"
+        app:layout_constraintTop_toBottomOf="@+id/NumOfCand"
+        app:layout_constraintVertical_bias="0.324" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupShorlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="104dp"
+        app:layout_constraintBottom_toTopOf="@+id/shortlistBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPhoneShorlist"
+        app:layout_constraintVertical_bias="0.084">
+
+        <RadioButton
+            android:id="@+id/xlsxDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:buttonTint="#AD0BC8"
+            android:text=".xls"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.019"
+            app:layout_constraintStart_toEndOf="@+id/csvDownload"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxResumeShorlist"
+            app:layout_constraintVertical_bias="0.201" />
+
+        <RadioButton
+            android:id="@+id/csvDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:buttonTint="#AD0BC8"
+            android:text=".csv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView52"
+            app:layout_constraintTop_toBottomOf="@+id/checkBoxResumeShorlist"
+            app:layout_constraintVertical_bias="0.2" />
+    </RadioGroup>
 
     <CheckBox
-        android:id="@+id/checkBox5"
-        android:layout_width="87dp"
-        android:layout_height="34dp"
+        android:id="@+id/checkBoxResumeShorlist"
+        android:layout_width="126dp"
+        android:layout_height="36dp"
+        android:buttonTint="#AD0BC8"
         android:text="Resume URL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toEndOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxPhoneShorlist"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEmailShorlist"
+        app:layout_constraintVertical_bias="0.06" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="92dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="48dp"
-        android:text="Location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.241"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/textView49"
-        app:layout_constraintVertical_bias="0.174" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="95dp"
-        android:layout_height="42dp"
+        android:id="@+id/checkBoxPhoneShorlist"
+        android:layout_width="135dp"
+        android:layout_height="38dp"
+        android:buttonTint="#AD0BC8"
         android:text="Phone Number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toEndOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxNameShorlist"
+        app:layout_constraintVertical_bias="0.063" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="79dp"
-        android:layout_height="29dp"
+        android:id="@+id/checkBoxEmailShorlist"
+        android:layout_width="103dp"
+        android:layout_height="32dp"
         android:layout_marginTop="48dp"
+        android:buttonTint="#AD0BC8"
         android:text="Email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.287"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxNameShorlist"
         app:layout_constraintTop_toBottomOf="@+id/textView49"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintVertical_bias="0.21" />
 
     <TextView
         android:id="@+id/textView49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No. of candidates :"
+        android:textColor="#AD0BC8"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
@@ -82,78 +129,90 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.236" />
 
+
     <TextView
         android:id="@+id/textView50"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fields Required :"
-        android:textSize="16sp "
+        android:textColor="#AD0BC8"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView49"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.215" />
 
     <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="79dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="48dp"
+        android:id="@+id/checkBoxNameShorlist"
+        android:layout_width="103dp"
+        android:layout_height="31dp"
+        android:buttonTint="#AD0BC8"
         android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
-        app:layout_constraintStart_toEndOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/textView49"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView50"
+        app:layout_constraintVertical_bias="0.034" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:padding="20px"
+        android:id="@+id/NumOfCand"
         android:layout_width="167dp"
         android:layout_height="48dp"
         android:layout_marginBottom="56dp"
+        android:background="@drawable/textinputborder"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxNameShorlist"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.077"
-        app:layout_constraintStart_toEndOf="@+id/textView49" />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:text=".csv"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView52"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5"
-        app:layout_constraintVertical_bias="0.202" />
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toEndOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/textView53"
+        app:layout_constraintVertical_bias="0.416" />
 
     <TextView
         android:id="@+id/textView52"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Download Format"
+        android:textColor="#AD0BC8"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupShorlist"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView50"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPhoneShorlist"
+        app:layout_constraintVertical_bias="0.285" />
 
     <TextView
         android:id="@+id/textView53"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SHORTLIST CANDIDATES"
-        android:textSize="16sp"
+        android:textColor="@color/appcolor"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView49"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/shortlistBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:padding="20px"
+        android:text="Download"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView52" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

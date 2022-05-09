@@ -23,7 +23,7 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_recruiter_home_page.xml" value="0.1384180790960452" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_recruiter_login.xml" value="0.2" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_recruiter_registration.xml" value="0.25601750547045954" />
-        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_see_applicants_closed.xml" value="0.264" />
+        <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_see_applicants_closed.xml" value="0.2" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_shortlist_candidates_closed_jobs.xml" value="0.4" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_view_active_jobs.xml" value="0.23697916666666666" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/layout/activity_view_closed_jobs.xml" value="0.23697916666666666" />
@@ -49,6 +49,17 @@
         <entry key="..\:/MAIN/UniHire/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/menu/bottom_nav_menu_rec.xml" value="0.10729166666666666" />
         <entry key="..\:/MAIN/UniHire/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1665" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.248" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/drawable/textinputborder.xml" value="0.248" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/activity_applicant_login.xml" value="0.26721014492753625" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/activity_filter.xml" value="0.26721014492753625" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/activity_filter_input.xml" value="0.26721014492753625" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/activity_multi_search.xml" value="0.26721014492753625" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/activity_search_job.xml" value="0.21105072463768115" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/activity_view_active_jobs.xml" value="0.27447916666666666" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/activity_view_all_jobs.xml" value="0.264" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/layout/fragment_search_job.xml" value="0.27447916666666666" />
+        <entry key="..\:/SE-Android App/UniHire/app/src/main/res/menu/search_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/UniHire/app/src/main/res/layout/fragment_profile_rec.xml" value="0.264" />
       </map>
     </option>
