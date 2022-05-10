@@ -1,6 +1,7 @@
 package com.example.unihire;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 
 public class MyAdapterAllJobs extends RecyclerView.Adapter<MyAdapterAllJobs.MyViewHolder1> {
     Context context;
-    public ArrayList<Job> list;
+    public static ArrayList<Job> list;
 
     public MyAdapterAllJobs(Context context, ArrayList<Job> list){
         this.context=context;
@@ -53,6 +54,16 @@ public class MyAdapterAllJobs extends RecyclerView.Adapter<MyAdapterAllJobs.MyVi
             datetime=itemView.findViewById(R.id.date_time_aj);
 
             this.context=context;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String jobID=list.get(getAdapterPosition()).jobID;
+                    Intent intent=new Intent(context, ViewJobInfoPage.class);
+                    intent.putExtra("JOBID", jobID);
+                    context.startActivity(intent);
+                }
+            });
 
 
         }

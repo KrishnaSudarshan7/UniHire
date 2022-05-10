@@ -1,6 +1,7 @@
 package com.example.unihire;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +51,16 @@ public class MyAdapterClosedApplicantList extends RecyclerView.Adapter<MyAdapter
             name=itemView.findViewById(R.id.applicant_name_card);
             headline=itemView.findViewById(R.id.applicant_headline_card);
             this.context = context;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String email=list.get(getAdapterPosition()).Email;
+                    Intent intent=new Intent(context, ViewApplicantDetails.class);
+                    intent.putExtra("APPEMAIL", email);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
