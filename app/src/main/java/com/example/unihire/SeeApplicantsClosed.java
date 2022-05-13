@@ -26,12 +26,15 @@ public class SeeApplicantsClosed extends AppCompatActivity {
     MyAdapterClosedApplicantList myAdapterApplicants;
     ArrayList<Applicant> list;
     FirebaseAuth fAuth;
-    Button shortlistBtn;
+    Button shortlistBtn, closeJob;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_see_applicants_closed);
         String JOBID = getIntent().getStringExtra("JOBID");
+
+        closeJob = findViewById(R.id.closeJobBtn);
+        closeJob.setVisibility(View.INVISIBLE);
         recyclerView=findViewById(R.id.AppListClosed_rv);
         ref= FirebaseDatabase.getInstance().getReference();
         fAuth= FirebaseAuth.getInstance();
@@ -41,6 +44,29 @@ public class SeeApplicantsClosed extends AppCompatActivity {
         myAdapterApplicants=new MyAdapterClosedApplicantList(this,list);
         recyclerView.setAdapter(myAdapterApplicants);
         shortlistBtn=findViewById(R.id.shortlistclosed);
+        shortlistBtn.setVisibility(View.INVISIBLE);
+
+
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.child("Job").child(JOBID).child("jobStatus").getValue().toString().equals("active")){
+                    shortlistBtn.setVisibility(View.INVISIBLE);
+                    closeJob.setVisibility(View.VISIBLE);
+                }
+                else if(snapshot.child("Job").child(JOBID).child("jobStatus").getValue().toString().equals("closed")){
+                    shortlistBtn.setVisibility(View.VISIBLE);
+                    closeJob.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         shortlistBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,13 +76,33 @@ public class SeeApplicantsClosed extends AppCompatActivity {
             }
         });
 
+        closeJob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ref.child("Job").child(JOBID).child("jobStatus").setValue("closed");
+                Intent intent=new Intent(SeeApplicantsClosed.this,ViewActiveJobs.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                String activeOrClosed="";
+                if(snapshot.child("Job").child(JOBID).child("jobStatus").getValue().toString().equals("active")){
+                    activeOrClosed="active";
+                }
+                else if(snapshot.child("Job").child(JOBID).child("jobStatus").getValue().toString().equals("closed")){
+                    activeOrClosed="closed";
+                }
                 for(DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
+
+
                     if(dataSnapshot.child("JobID").getValue().toString().equals(JOBID) &&
-                            snapshot.child("Job").child(JOBID).child("jobStatus").getValue().toString().equals("closed")){
+                            snapshot.child("Job").child(JOBID).child("jobStatus").getValue().toString().equals(activeOrClosed)){
                         String app_id= (String) dataSnapshot.child("ApplicantID").getValue();
                         String name=snapshot.child("Applicant").child(app_id).child("Name").getValue().toString();
                         String email=snapshot.child("Applicant").child(app_id).child("Email").getValue().toString();
@@ -70,11 +116,15 @@ public class SeeApplicantsClosed extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
 
+
     }
+
+
 }
