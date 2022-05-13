@@ -18,7 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class SeeApplicantsClosed extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -80,7 +82,11 @@ public class SeeApplicantsClosed extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ref.child("Job").child(JOBID).child("jobStatus").setValue("closed");
-                Intent intent=new Intent(SeeApplicantsClosed.this,ViewActiveJobs.class);
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                Date date = new Date();
+                String dateTime=formatter.format(date);
+                ref.child("Job").child(JOBID).child("closedDateTime").setValue(dateTime);
+                Intent intent=new Intent(SeeApplicantsClosed.this,ViewClosedJobs.class);
                 startActivity(intent);
             }
         });
