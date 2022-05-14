@@ -63,6 +63,16 @@ public class MyAdapterActiveJobs extends RecyclerView.Adapter<MyAdapterActiveJob
 
             this.context=context;
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String jobID=list.get(getAdapterPosition()).jobID;
+                    Intent intent=new Intent(context, SeeApplicantsClosed.class);
+                    intent.putExtra("JOBID", jobID);
+                    context.startActivity(intent);
+                }
+            });
+
 
         }
     }
