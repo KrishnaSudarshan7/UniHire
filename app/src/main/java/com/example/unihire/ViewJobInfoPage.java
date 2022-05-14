@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,13 +25,18 @@ public class ViewJobInfoPage extends AppCompatActivity {
     FirebaseAuth fAuth;
     DatabaseReference reff;
     String UnivId="";
+    TextView applied;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_job_info_page);
 
         String JOBID = getIntent().getStringExtra("JOBID");
+        applied=findViewById(R.id.appliedTextView);
+        applied.setVisibility(View.INVISIBLE);
         applyBtn=findViewById(R.id.applyJobBtn);
+        applyBtn.setVisibility(View.INVISIBLE);
         jobTitle=findViewById(R.id.jobTitleDisp);
         UnivName=findViewById(R.id.univDisp);
         Dept=findViewById(R.id.deptDisp);
@@ -47,6 +53,20 @@ public class ViewJobInfoPage extends AppCompatActivity {
                 Dept.setText(snapshot.child("Job").child(JOBID).child("Department").getValue().toString());
                 Spec.setText(snapshot.child("Job").child(JOBID).child("Specialization").getValue().toString());
                 jd.setText(snapshot.child("Job").child(JOBID).child("JobDescription").getValue().toString());
+                boolean found=false;
+                for (DataSnapshot dataSnapshot : snapshot.child("Application").getChildren()){
+                    if (dataSnapshot.child("ApplicantID").getValue().toString().equals(fAuth.getUid())
+                    && dataSnapshot.child("JobID").getValue().toString().equals(JOBID)
+                    ){
+                        found=true;
+                        applyBtn.setVisibility(View.VISIBLE);
+                        applyBtn.setVisibility(View.GONE);
+                        applied.setVisibility(View.VISIBLE);
+                        break;
+                    }
+                }
+                if(!found)
+                    applyBtn.setVisibility(View.VISIBLE);
             }
 
             @Override
