@@ -61,6 +61,8 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
     Button shorlist;
     FirebaseAuth fAuth;
     DatabaseReference ref;
+
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -163,6 +165,8 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
 
     }
+
+    @SuppressWarnings("deprecation")
     public void shorlistCandidates(String JOBID,int numberOfCandidates,boolean nameChecked,boolean emailChecked, boolean phoneNumChecked, boolean resumeURLChecked,String SelectedFormat)  {
 
 
@@ -357,6 +361,7 @@ public class shortlistCandidatesClosedJobs extends AppCompatActivity {
 
 
     }
+    @SuppressWarnings("deprecation")
     @RequiresApi(api = Build.VERSION_CODES.O)
     public ArrayList<Integer> calculate(DataSnapshot snapshot, String p, String JOBID) throws ParseException {
         //Toast.makeText(this, "Ulla Vanchu"+snapshot.child("Job").child(JOBID).child("jobID").getValue().toString(), Toast.LENGTH_SHORT).show();
