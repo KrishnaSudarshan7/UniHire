@@ -78,7 +78,7 @@ public class ViewJobInfoPage extends AppCompatActivity {
         applyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ViewJobInfoPage.this, ApplyJobFormPage.class);
+                Intent intent=new Intent(ViewJobInfoPage.this, ApplyJob.class);
                 intent.putExtra("JOBID", JOBID);
                 startActivity(intent);
             }
