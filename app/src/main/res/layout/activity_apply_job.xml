@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="1600dp"
-    tools:context=".ApplyJob">
-
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="match_parent"
-        android:layout_height="1600dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+    android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            tools:context=".ApplyJob">
 
             <TextView
                 android:id="@+id/textView74"
@@ -36,7 +29,7 @@
                 android:id="@+id/textView62"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="104dp"
                 android:text="Name"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
@@ -48,12 +41,12 @@
             <EditText
                 android:id="@+id/name"
                 android:layout_width="224dp"
-                android:layout_height="26dp"
-                android:layout_marginTop="28dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="18dp"
                 android:background="@drawable/textinputborder"
+                android:hint="     Name"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
-                android:hint="     Name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.367"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
@@ -63,19 +56,22 @@
                 android:id="@+id/textView63"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
                 android:text="Gender"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
-                tools:layout_editor_absoluteX="38dp"
-                tools:layout_editor_absoluteY="130dp" />
+                app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView62" />
 
             <RadioGroup
                 android:id="@+id/radioGroup"
-                android:layout_width="207dp"
-                android:layout_height="106dp"
-                android:layout_marginTop="128dp"
+                android:layout_width="216dp"
+                android:layout_height="137dp"
+                android:layout_marginTop="156dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.588"
+                app:layout_constraintHorizontal_bias="0.615"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -83,6 +79,7 @@
                     android:id="@+id/gendermale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dp"
                     android:text="Male"
                     android:textColor="@color/appcolor" />
 
@@ -90,6 +87,7 @@
                     android:id="@+id/genderfemale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dp"
                     android:text="Female"
                     android:textColor="@color/appcolor" />
 
@@ -97,8 +95,10 @@
                     android:id="@+id/genderother"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:minHeight="48dp"
                     android:text="Other"
-                    android:textColor="@color/appcolor" />
+                    android:textColor="@color/appcolor"
+                    tools:ignore="TouchTargetSizeCheck" />
             </RadioGroup>
 
             <TextView
@@ -129,8 +129,8 @@
             <EditText
                 android:id="@+id/edu1_univname"
                 android:layout_width="241dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="252dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="282dp"
                 android:background="@drawable/textinputborder"
                 android:hint="     University Name"
                 android:textColor="@color/appcolor"
@@ -141,16 +141,48 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
             <EditText
-                android:id="@+id/edu2_univname"
+                android:id="@+id/edu3_univname"
                 android:layout_width="241dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="516dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="982dp"
                 android:background="@drawable/textinputborder"
                 android:hint="     University Name"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.921"
+                app:layout_constraintHorizontal_bias="0.752"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <EditText
+                android:id="@+id/pub1_title"
+                android:layout_width="241dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1302dp"
+                android:background="@drawable/textinputborder"
+                android:hint="     Publication Title"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.752"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <EditText
+                android:id="@+id/pub1_jcname"
+                android:layout_width="241dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1582dp"
+                android:layout_marginEnd="140dp"
+                android:background="@drawable/textinputborder"
+                android:hint="     Journal/Conference Name"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.752"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
                 app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
@@ -182,24 +214,12 @@
                 android:id="@+id/textView77"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="160dp"
                 android:text="Degree"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.085"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="388dp"
-                android:text="Degree"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.072"
+                app:layout_constraintHorizontal_bias="0.105"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -207,7 +227,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="160dp"
                 android:text="*"
                 android:textColor="#F10505"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -216,11 +236,537 @@
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
             <EditText
+                android:id="@+id/edu1_spec"
+                android:layout_width="237dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="434dp"
+                android:background="@drawable/textinputborder"
+                android:hint="      Specialization"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.636"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <EditText
+                android:id="@+id/edu1_fromdate"
+                android:layout_width="81dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="350dp"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/appcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.106"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView79"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <EditText
+                android:id="@+id/edu3_fromdate"
+                android:layout_width="81dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="680dp"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/appcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.106"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView79"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView86"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="632dp"
+                android:text="From Date"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.121"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView90"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="962dp"
+                android:text="From Date"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.121"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <EditText
+                android:id="@+id/edu2_spec"
+                android:layout_width="237dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="778dp"
+                android:background="@drawable/textinputborder"
+                android:hint="      Specialization"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <EditText
+                android:id="@+id/edu3_spec"
+                android:layout_width="237dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="1115dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/textinputborder"
+                android:hint="      Specialization"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <EditText
+                android:id="@+id/edu2_todate"
+                android:layout_width="81dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginEnd="70dp"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/appcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.649"
+                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintTop_toBottomOf="@+id/textView80"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <EditText
+                android:id="@+id/edu3_todate"
+                android:layout_width="81dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="680dp"
+                android:layout_marginEnd="70dp"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/appcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.649"
+                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+            <EditText
+                android:id="@+id/pub1_date"
+                android:layout_width="81dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="880dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/appcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.649"
+                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="632dp"
+                android:text="To Date"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.573"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView91"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="962dp"
+                android:text="To Date"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.573"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView95"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="1162dp"
+                android:text="Date of publication"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.573"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <EditText
+                android:id="@+id/edu1_todate"
+                android:layout_width="81dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/appcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.325"
+                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintTop_toBottomOf="@+id/textView80"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="228dp"
+                android:layout_marginEnd="14dp"
+                android:text="*"
+                android:textColor="#F10505"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.126"
+                app:layout_constraintStart_toEndOf="@+id/textView77"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView85"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="580dp"
+                android:text="Specialization"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.102"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView89"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="900dp"
+                android:text="Specialization"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.102"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="395dp"
+                android:text="Education 2 "
+                android:textColor="@color/appcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="740dp"
+                android:text="Education 3 "
+                android:textColor="@color/appcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView92"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1060dp"
+                android:text="Publication 1 "
+                android:textColor="@color/appcolor"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.157"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <EditText
+                android:id="@+id/edu2_degree"
+                android:layout_width="162dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="718dp"
+                android:background="@drawable/textinputborder"
+                android:hint="    Degree"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.595"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <EditText
+                android:id="@+id/edu3_degree"
+                android:layout_width="162dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1050dp"
+                android:background="@drawable/textinputborder"
+                android:hint="    Degree"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.595"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <EditText
+                android:id="@+id/pub1_citations"
+                android:layout_width="162dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1650dp"
+                android:layout_marginEnd="100dp"
+                android:background="@drawable/textinputborder"
+                android:hint="    Citations"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.595"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="296dp"
+                android:text="To Date"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.573"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView78"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="230dp"
+                android:text="Specialization"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.07"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <EditText
+                android:id="@+id/edu2_fromdate"
+                android:layout_width="81dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="date"
+                android:textColor="@color/appcolor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.142"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView79"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <EditText
+                android:id="@+id/edu2_univname"
+                android:layout_width="241dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="650dp"
+                android:background="@drawable/textinputborder"
+                android:hint="     University Name"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="290dp"
+                android:layout_marginEnd="10dp"
+                android:text="*"
+                android:textColor="#F10505"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.102"
+                app:layout_constraintStart_toEndOf="@+id/textView77"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView79"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="292dp"
+                android:text="From Date"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.112"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="520dp"
+                android:text="Degree"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.116"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView88"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="840dp"
+                android:text="Degree"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.116"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView83"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="292dp"
+                android:layout_marginEnd="14dp"
+                android:text="*"
+                android:textColor="#F10505"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.578"
+                app:layout_constraintStart_toEndOf="@+id/textView77"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="450dp"
+                android:layout_marginEnd="10dp"
+                android:text="University Name"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView84"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="780dp"
+                android:layout_marginEnd="10dp"
+                android:text="University Name"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView93"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1340dp"
+                android:layout_marginEnd="10dp"
+                android:text="Journal/Conference Name"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView97"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1460dp"
+                android:layout_marginEnd="10dp"
+                android:text="Citations"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView96"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1100dp"
+                android:layout_marginEnd="10dp"
+                android:text="Publication Title"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/textView94"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1160dp"
+                android:layout_marginEnd="10dp"
+                android:text="Publication Type"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.108"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <EditText
                 android:id="@+id/edu1_degree"
                 android:layout_width="162dp"
-                android:layout_height="27dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="358dp"
                 android:background="@drawable/textinputborder"
                 android:hint="    Degree"
                 android:textColor="@color/appcolor"
@@ -230,218 +776,39 @@
                 app:layout_constraintStart_toEndOf="@+id/textView62"
                 app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
-            <EditText
-                android:id="@+id/edu2_degree"
-                android:layout_width="162dp"
-                android:layout_height="27dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="560dp"
-                android:background="@drawable/textinputborder"
-                android:hint="    Degree"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="189dp"
+                android:layout_height="125dp"
+                android:layout_marginTop="1490dp"
+                android:layout_marginEnd="160dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.472"
-                app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
-
-            <TextView
-                android:id="@+id/textView78"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="168dp"
-                android:text="Specialization"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.051"
+                app:layout_constraintHorizontal_bias="0.615"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/textView85"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="432dp"
-                android:text="Specialization"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.051"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+                <RadioButton
+                    android:id="@+id/pub1_Journal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Journal"
+                    android:textColor="@color/appcolor" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="168dp"
-                android:layout_marginEnd="14dp"
-                android:text="*"
-                android:textColor="#F10505"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.12"
-                app:layout_constraintStart_toEndOf="@+id/textView77"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+                <RadioButton
+                    android:id="@+id/pub1_Conference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="Conference"
+                    android:textColor="@color/appcolor" />
 
-            <TextView
-                android:id="@+id/textView83"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="212dp"
-                android:layout_marginEnd="14dp"
-                android:text="*"
-                android:textColor="#F10505"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.487"
-                app:layout_constraintStart_toEndOf="@+id/textView77"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <TextView
-                android:id="@+id/textView81"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="212dp"
-                android:layout_marginEnd="14dp"
-                android:text="*"
-                android:textColor="#F10505"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.084"
-                app:layout_constraintStart_toEndOf="@+id/textView77"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <EditText
-                android:id="@+id/edu1_spec"
-                android:layout_width="237dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="348dp"
-                android:background="@drawable/textinputborder"
-                android:hint="      Specialization"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.704"
-                app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
-
-            <EditText
-                android:id="@+id/edu2_spec"
-                android:layout_width="237dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="604dp"
-                android:background="@drawable/textinputborder"
-                android:hint="      Specialization"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.875"
-                app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
-
-            <TextView
-                android:id="@+id/textView79"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="212dp"
-                android:text="From Date"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.091"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <TextView
-                android:id="@+id/textView86"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="472dp"
-                android:text="From Date"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.047"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <TextView
-                android:id="@+id/textView80"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="212dp"
-                android:text="To Date"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <TextView
-                android:id="@+id/textView87"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="472dp"
-                android:text="To Date"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <EditText
-                android:id="@+id/edu1_fromdate"
-                android:layout_width="81dp"
-                android:layout_height="28dp"
-                android:ems="10"
-                android:textColor="@color/appcolor"
-                android:inputType="date"
-                tools:layout_editor_absoluteX="31dp"
-                tools:layout_editor_absoluteY="481dp" />
-
-            <EditText
-                android:id="@+id/edu1_todate"
-                android:layout_width="81dp"
-                android:layout_height="28dp"
-                android:textColor="@color/appcolor"
-                android:ems="10"
-                android:inputType="date"
-                tools:layout_editor_absoluteX="178dp"
-                tools:layout_editor_absoluteY="481dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="300dp"
-                android:text="Education 2 "
-                android:textColor="@color/appcolor"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.083"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="344dp"
-                android:text="University Name"
-                android:textColor="@color/appcolor"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.088"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            </RadioGroup>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </ScrollView>
 
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

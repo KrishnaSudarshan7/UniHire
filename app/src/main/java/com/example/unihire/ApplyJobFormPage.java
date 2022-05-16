@@ -9,7 +9,7 @@ public class ApplyJobFormPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apply_job_form_page);
+        setContentView(R.layout.activity_apply_job);
         String JOBID = getIntent().getStringExtra("JOBID");
 
     }
