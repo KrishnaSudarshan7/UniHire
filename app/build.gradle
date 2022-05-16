@@ -29,6 +29,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+    lintOptions {
+        abortOnError false
+        quiet true
+        lintConfig file('./lint.xml')
+    }
 }
 
 dependencies {
