@@ -12,7 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 
 public class ApplyJob extends AppCompatActivity {
 
-    String JOBID = getIntent().getStringExtra("JOBID");
+
     EditText Name,edu1_univname, edu1_degree, edu1_spec, edu1_fromdate, edu1_todate,gender,edu2_univname, edu2_degree, edu2_spec, edu2_fromdate, edu2_todate;
     EditText edu3_univname, edu3_degree, edu3_spec, edu3_fromdate, edu3_todate,pub1_title,pub1_type,pub1_date, pub1_jcname, pub1_citations,award1_name,research1_name, research1_amount;
     RadioGroup radioGroup, radioGroup2;
@@ -23,7 +23,9 @@ public class ApplyJob extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String JOBID = getIntent().getStringExtra("JOBID");
         setContentView(R.layout.activity_apply_job);
+        /*
         Name=findViewById(R.id.name);
         radioGroup=findViewById(R.id.radioGroup);
         radioGroup2=findViewById(R.id.radioGroup2);
@@ -56,7 +58,7 @@ public class ApplyJob extends AppCompatActivity {
         research1_name=findViewById(R.id.research1_name);
         research1_amount=findViewById(R.id.research1_amount);
 
-
+*/
 
     }
 }

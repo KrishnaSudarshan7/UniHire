@@ -3,5 +3,19 @@
     <!-- Disable the given check in this project -->
     <issue id="IconMissingDensityFolder" severity="ignore" />
     <!-- Change the severity of hardcoded strings to "error" -->
-    <issue id="HardcodedText" severity="error" />
+    <issue id="HardcodedText" severity="ignore" />
 </lint>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

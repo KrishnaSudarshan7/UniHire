@@ -2,7 +2,7 @@ package com.example.unihire;
 
 public class Applicant {
     public String Email,PhoneNum,Name,About,Headline,DP_Link;
-
+/*
     public String getEmail() {
         return Email;
     }
@@ -48,7 +48,7 @@ public class Applicant {
 
     public void setEmail(String email) {
         Email = email;
-    }
+    }*/
 
     Applicant(String Name, String Email){
         this.Email=Email;

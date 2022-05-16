@@ -26,13 +26,14 @@ public class ViewJobInfoPage extends AppCompatActivity {
     DatabaseReference reff;
     String UnivId="";
     TextView applied;
+    String JOBID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_job_info_page);
 
-        String JOBID = getIntent().getStringExtra("JOBID");
+        JOBID = getIntent().getStringExtra("JOBID");
         applied=findViewById(R.id.appliedTextView);
         applied.setVisibility(View.INVISIBLE);
         applyBtn=findViewById(R.id.applyJobBtn);

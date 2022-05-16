@@ -31,7 +31,7 @@ public class Job {
 
     public String UnivId,JobTitle,Department,Specialization,JobDescription,Priority1,Priority2,Priority3,jobID;
     public String jobStatus;
-
+/*
     public String getUnivId() {
         return UnivId;
     }
@@ -152,6 +152,7 @@ public class Job {
         Weightage3 = weightage3;
     }
 
+    /*
     public boolean isNameInput() {
         return NameInput;
     }
@@ -184,13 +185,7 @@ public class Job {
         EmailInput = emailInput;
     }
 
-    public boolean isAddressInput() {
-        return AddressInput;
-    }
 
-    public void setAddressInput(boolean addressInput) {
-        AddressInput = addressInput;
-    }
 
     public boolean isWorkExpInput() {
         return WorkExpInput;
@@ -247,7 +242,7 @@ public class Job {
     public void setDraft(boolean draft) {
         isDraft = draft;
     }
-
+*/
     public String PostedDateTime,closedDateTime;
     public int Weightage1,Weightage2,Weightage3;
     public boolean NameInput,GenderInput,PhoneInput,EmailInput,AddressInput,WorkExpInput,EducationInput,PublicationInput,AwardInput,ResearchInput,ResumeInput;
