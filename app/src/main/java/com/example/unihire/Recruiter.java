@@ -11,7 +11,7 @@ public class Recruiter {
     public Recruiter(){
 
     }
-
+/*
     public String getUnivName() {
         return univName;
     }
@@ -74,7 +74,7 @@ public class Recruiter {
 
     public void setDP_Link(String DP_Link) {
         this.DP_Link = DP_Link;
-    }
+    }*/
 
     public Recruiter(String univName, String univURL, String univUGCID, String univNum, String Email){
 

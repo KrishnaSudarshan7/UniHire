@@ -319,7 +319,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
             <EditText
-                
+
                 android:id="@+id/edu1_fromdate"
                 android:layout_width="81dp"
                 android:layout_height="48dp"

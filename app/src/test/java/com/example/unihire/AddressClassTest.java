@@ -3,7 +3,7 @@ package com.example.unihire;
 import junit.framework.TestCase;
 
 public class AddressClassTest extends TestCase {
-
+/*
     public void testSetAddressL1() {
         AddressClass ua=new AddressClass("Line 1",
                 "Line 2", "India", "Tamil Nadu",
@@ -68,5 +68,5 @@ public class AddressClassTest extends TestCase {
         ua.setPincode(newVal);
         assertEquals(newVal,ua.getPincode());
         System.out.println("Test Passed");
-    }
+    }*/
 }
