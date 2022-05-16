@@ -4,8 +4,833 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Application Form"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <EditText
+        android:id="@+id/name_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/email_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/gender_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/phone_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/address_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education 1"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="University Name"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu1_univname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Degree"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu1_degree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specialization"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu1_spec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Year"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+
+    <EditText
+        android:id="@+id/edu1_fromyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Year"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu1_toyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marks"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu1_marks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education 2"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="University Name"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu2_univname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Degree"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu2_degree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specialization"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu2_spec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Year"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+
+    <EditText
+        android:id="@+id/edu2_fromyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Year"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu2_toyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marks"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu2_marks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education 3"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="University Name"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu3_univname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Degree"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu3_degree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Specialization"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu3_spec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Year"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+
+    <EditText
+        android:id="@+id/edu3_fromyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Year"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu3_toyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marks"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/edu3_marks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Work Experience"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Employer(s) Name"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/we_empname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Job Title"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/we_jobtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/we_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From Date (DD/MM/YY)"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/we_fromdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Date (DD/MM/YY)"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/we_todate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Publication"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/pub_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:text="About"
+        android:textColor="@color/appcolor"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/pub_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Citations"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/pub_citations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Journal Or Conference (J or C)"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/pub_jc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Journal Conference Name"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/pub_jcname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Awards Honors"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Award Name"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/ah_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/ah_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Research Grants"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grant Title"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/rg_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/rg_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agency"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/rg_agency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/rg_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resume URL"
+        android:textColor="@color/appcolor"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10sp"
+        />
+
+    <EditText
+        android:id="@+id/resume_url_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textinputborder"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/applyBtnFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:padding="10dp"
+        android:paddingTop="20dp"
+        android:text="APPLY"
+        android:textColor="@color/white" />
+
+
+
+</LinearLayout>
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:context=".ApplyJob">
@@ -1098,7 +1923,7 @@
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+-->
 
 
 
