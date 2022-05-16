@@ -23,6 +23,9 @@
             android:name=".ViewApplicantDetails"
             android:exported="false" />
         <activity
+            android:name=".ApplyJobFormPage"
+            android:exported="false" />
+        <activity
             android:name=".ViewJobInfoPage"
             android:exported="false" />
         <activity
