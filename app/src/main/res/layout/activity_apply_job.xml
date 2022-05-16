@@ -10,6 +10,52 @@
             android:layout_height="wrap_content"
             tools:context=".ApplyJob">
 
+            <EditText
+                android:id="@+id/edu3_marks"
+                android:layout_width="98dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="1024dp"
+                android:background="@drawable/textinputborder"
+                android:hint="    Marks"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.385"
+                app:layout_constraintStart_toEndOf="@+id/edu3_degree"
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/edu2_marks"
+                android:layout_width="105dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/textinputborder"
+                android:hint="    Marks"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.287"
+                app:layout_constraintStart_toEndOf="@+id/edu2_degree"
+                app:layout_constraintTop_toBottomOf="@+id/edu2_univname"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/edu1_marks"
+                android:layout_width="96dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="348dp"
+                android:background="@drawable/textinputborder"
+                android:hint="       Marks"
+                android:textColor="@color/appcolor"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.681"
+                app:layout_constraintStart_toEndOf="@+id/textView62"
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
+
             <TextView
                 android:id="@+id/textView74"
                 android:layout_width="wrap_content"
@@ -141,6 +187,7 @@
                 android:layout_marginTop="272dp"
                 android:background="@drawable/textinputborder"
                 android:hint="     University Name"
+                android:text=" "
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -153,16 +200,15 @@
                 android:id="@+id/edu3_univname"
                 android:layout_width="241dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="982dp"
                 android:background="@drawable/textinputborder"
                 android:hint="     University Name"
+                android:text="."
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.752"
-                app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                app:layout_constraintStart_toEndOf="@+id/textView84"
+                app:layout_constraintTop_toBottomOf="@+id/textView82"
                 tools:ignore="HardcodedText" />
 
             <EditText
@@ -199,21 +245,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/resume_link"
                 android:layout_width="241dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="2080dp"
+                android:layout_marginTop="2096dp"
                 android:layout_marginEnd="100dp"
                 android:background="@drawable/textinputborder"
                 android:hint="     Resume Link"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.752"
+                app:layout_constraintHorizontal_bias="0.612"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 tools:ignore="HardcodedText"
@@ -303,24 +349,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/edu1_spec"
                 android:layout_width="237dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="434dp"
+                android:layout_marginTop="412dp"
                 android:background="@drawable/textinputborder"
                 android:hint="      Specialization"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.636"
+                app:layout_constraintHorizontal_bias="0.647"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
 
             <EditText
 
-                android:id="@+id/edu1_fromdate"
+                android:id="@+id/edu2_fromdate"
                 android:layout_width="81dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="350dp"
@@ -377,37 +423,36 @@
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/edu2_spec"
                 android:layout_width="237dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="778dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/textinputborder"
                 android:hint="      Specialization"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.545"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintTop_toBottomOf="@+id/edu2_marks"
+                tools:ignore="HardcodedText" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/edu3_spec"
                 android:layout_width="237dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="1115dp"
+                android:layout_marginTop="1092dp"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/textinputborder"
                 android:hint="      Specialization"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintHorizontal_bias="0.714"
+                app:layout_constraintStart_toEndOf="@+id/textView85"
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
 
             <EditText
 
@@ -421,7 +466,7 @@
                 android:textColor="@color/appcolor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.649"
-                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintStart_toEndOf="@+id/edu2_fromdate"
                 app:layout_constraintTop_toBottomOf="@+id/textView80"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -437,7 +482,7 @@
                 android:textColor="@color/appcolor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.649"
-                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintStart_toEndOf="@+id/edu2_fromdate"
                 app:layout_constraintTop_toBottomOf="@+id/textView80" />
 
             <EditText
@@ -453,7 +498,7 @@
                 android:textColor="@color/appcolor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.649"
-                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintStart_toEndOf="@+id/edu2_fromdate"
                 app:layout_constraintTop_toBottomOf="@+id/textView80"
                 tools:ignore="HardcodedText" />
 
@@ -510,7 +555,7 @@
                 android:textColor="@color/appcolor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.325"
-                app:layout_constraintStart_toEndOf="@+id/edu1_fromdate"
+                app:layout_constraintStart_toEndOf="@+id/edu2_fromdate"
                 app:layout_constraintTop_toBottomOf="@+id/textView80"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -646,36 +691,35 @@
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/edu2_degree"
-                android:layout_width="162dp"
-                android:layout_height="48dp"
+                android:layout_width="105dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="708dp"
+                android:layout_marginTop="700dp"
                 android:background="@drawable/textinputborder"
                 android:hint="    Degree"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.595"
+                app:layout_constraintHorizontal_bias="0.159"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/edu3_degree"
-                android:layout_width="162dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1050dp"
+                android:layout_width="98dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="1024dp"
                 android:background="@drawable/textinputborder"
                 android:hint="    Degree"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.595"
-                app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintHorizontal_bias="0.24"
+                app:layout_constraintStart_toEndOf="@+id/textView88"
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
 
             <EditText
                 tools:ignore="HardcodedText"
@@ -741,7 +785,7 @@
 
             <EditText
 
-                android:id="@+id/edu2_fromdate"
+                android:id="@+id/edu1_fromdate"
                 android:layout_width="81dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="12dp"
@@ -755,19 +799,20 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/edu2_univname"
                 android:layout_width="241dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="640dp"
+                android:layout_marginTop="632dp"
                 android:background="@drawable/textinputborder"
                 android:hint="     University Name"
+                android:text="."
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.898"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 tools:ignore="HardcodedText"
@@ -990,20 +1035,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
             <EditText
-                tools:ignore="HardcodedText"
                 android:id="@+id/edu1_degree"
-                android:layout_width="162dp"
-                android:layout_height="48dp"
+                android:layout_width="96dp"
+                android:layout_height="45dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="358dp"
+                android:layout_marginTop="348dp"
                 android:background="@drawable/textinputborder"
                 android:hint="    Degree"
                 android:textColor="@color/appcolor"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.38"
+                app:layout_constraintHorizontal_bias="0.152"
                 app:layout_constraintStart_toEndOf="@+id/textView62"
-                app:layout_constraintTop_toBottomOf="@+id/textView74" />
+                app:layout_constraintTop_toBottomOf="@+id/textView74"
+                tools:ignore="HardcodedText" />
 
             <RadioGroup
                 android:id="@+id/radioGroup2"
@@ -1037,7 +1082,7 @@
             </RadioGroup>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/applyBtnFinal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Apply"
